@@ -180,6 +180,11 @@
       box-shadow:0 10px 24px rgba(37,99,235,.24);
     }
 
+    .nav-btn.auth-hidden,
+    .bottom-btn.auth-hidden{
+      display:none!important;
+    }
+
     .nav-icon{
       width:23px;
       text-align:center;
@@ -520,7 +525,8 @@
     .conditional-box.show{
       display:block;
     }
-.table-wrap{
+
+    .table-wrap{
       width:100%;
       overflow-x:auto;
       border-radius:22px;
@@ -858,6 +864,15 @@
       box-shadow:0 10px 26px rgba(217,164,65,.12);
     }
 
+    .debt-card.view-only{
+      cursor:default;
+    }
+
+    .debt-card.view-only:hover{
+      border-color:var(--border);
+      box-shadow:0 8px 22px rgba(15,23,42,.05);
+    }
+
     .debt-name{
       font-size:16px;
       font-weight:900;
@@ -963,6 +978,7 @@
       background:rgba(255,255,255,.2);
       color:#fff;
     }
+
     .payment-choice-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1230,6 +1246,186 @@
       display:none;
     }
 
+    .auth-lock{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      direction:rtl;
+      font-family:Cairo,Arial,sans-serif;
+      background:
+        radial-gradient(circle at top right,rgba(37,99,235,.28),transparent 35%),
+        radial-gradient(circle at bottom left,rgba(217,164,65,.22),transparent 32%),
+        linear-gradient(135deg,#eff6ff,#f8fafc);
+    }
+
+    .auth-lock.hide{
+      display:none;
+    }
+
+    .auth-card{
+      width:min(470px,100%);
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(226,232,240,.95);
+      border-radius:30px;
+      box-shadow:0 30px 80px rgba(15,23,42,.18);
+      padding:20px;
+      backdrop-filter:blur(20px);
+    }
+
+    .auth-logo{
+      width:72px;
+      height:72px;
+      border-radius:24px;
+      background:linear-gradient(135deg,#2563eb,#38bdf8);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      box-shadow:0 18px 36px rgba(37,99,235,.26);
+      margin:0 auto 12px;
+    }
+
+    .auth-title{
+      text-align:center;
+      font-size:23px;
+      font-weight:900;
+      color:#0f172a;
+      margin:0;
+    }
+
+    .auth-sub{
+      text-align:center;
+      color:#64748b;
+      font-size:13px;
+      margin:7px 0 18px;
+      line-height:1.8;
+    }
+
+    .auth-tabs{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-bottom:14px;
+    }
+
+    .auth-tab{
+      border:1px solid #e2e8f0;
+      background:#fff;
+      border-radius:16px;
+      padding:11px;
+      font-weight:900;
+    }
+
+    .auth-tab.active{
+      background:linear-gradient(135deg,#2563eb,#1d4ed8);
+      color:#fff;
+      border-color:transparent;
+    }
+
+    .auth-field{
+      margin-bottom:10px;
+    }
+
+    .auth-field label{
+      display:block;
+      font-size:13px;
+      font-weight:900;
+      color:#334155;
+      margin-bottom:6px;
+    }
+
+    .auth-input{
+      width:100%;
+      border:1px solid transparent;
+      background:#f8fafc;
+      border-radius:17px;
+      padding:13px 14px;
+      outline:none;
+      font-size:14px;
+      font-family:inherit;
+    }
+
+    .auth-input:focus{
+      background:#fff;
+      border-color:rgba(37,99,235,.45);
+      box-shadow:0 0 0 4px rgba(37,99,235,.08);
+    }
+
+    .auth-main-btn{
+      width:100%;
+      border:0;
+      border-radius:18px;
+      padding:13px;
+      background:linear-gradient(135deg,#2563eb,#1d4ed8);
+      color:white;
+      font-weight:900;
+      font-family:inherit;
+      margin-top:6px;
+    }
+
+    .auth-note{
+      margin-top:12px;
+      font-size:12px;
+      color:#64748b;
+      line-height:1.8;
+      background:#f8fafc;
+      border:1px solid #e2e8f0;
+      border-radius:16px;
+      padding:10px;
+    }
+
+    .employee-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .perm-card{
+      border:1px solid #e2e8f0;
+      background:#fff;
+      border-radius:16px;
+      padding:10px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .perm-card input{
+      width:18px;
+      height:18px;
+      accent-color:#2563eb;
+    }
+
+    .auth-user-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:9px 11px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid #bfdbfe;
+    }
+
+    .blocked-page{
+      background:#fff;
+      border:1px solid #fee2e2;
+      color:#991b1b;
+      border-radius:24px;
+      padding:28px;
+      text-align:center;
+      font-weight:900;
+    }
+
     @media print{
       body *{
         visibility:hidden!important;
@@ -1241,10 +1437,21 @@
       }
 
       #printArea{
-        position:absolute;
-        inset:0;
-        width:100%;
-        background:white;
+        display:block!important;
+        position:fixed!important;
+        inset:0!important;
+        width:100%!important;
+        min-height:100vh!important;
+        background:white!important;
+        z-index:999999!important;
+        padding:0!important;
+        margin:0!important;
+        overflow:visible!important;
+      }
+
+      #printArea table{
+        min-width:0!important;
+        width:100%!important;
       }
 
       .no-print{
@@ -1464,10 +1671,68 @@
       .clean-stats-grid{
         grid-template-columns:repeat(2,minmax(0,1fr)) !important;
       }
+
+      .employee-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 <body>
+  <div id="authLock" class="auth-lock">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+
+      <h1 class="auth-title">تسجيل الدخول</h1>
+      <div class="auth-sub">
+        أول دخول للمدير يكون بكلمة المرور المؤقتة <b>0000</b><br>
+        بعدها غيّر كلمة مرور المدير من الإعدادات.
+      </div>
+
+      <div class="auth-tabs">
+        <button id="authAdminTab" class="auth-tab active" type="button">
+          <i class="fa-solid fa-user-tie"></i> مدير
+        </button>
+        <button id="authEmployeeTab" class="auth-tab" type="button">
+          <i class="fa-solid fa-user"></i> موظف
+        </button>
+      </div>
+
+      <form id="adminLoginForm">
+        <div class="auth-field">
+          <label>كلمة مرور المدير</label>
+          <input id="adminPasswordInput" class="auth-input" type="password" placeholder="0000">
+        </div>
+
+        <button class="auth-main-btn" type="submit">
+          <i class="fa-solid fa-right-to-bracket"></i> دخول المدير
+        </button>
+      </form>
+
+      <form id="employeeLoginForm" style="display:none">
+        <div class="auth-field">
+          <label>اسم الموظف</label>
+          <input id="employeeNameInput" class="auth-input" placeholder="اسم الموظف">
+        </div>
+
+        <div class="auth-field">
+          <label>كلمة مرور الموظف</label>
+          <input id="employeePasswordInput" class="auth-input" type="password" placeholder="كلمة المرور">
+        </div>
+
+        <button class="auth-main-btn" type="submit">
+          <i class="fa-solid fa-right-to-bracket"></i> دخول الموظف
+        </button>
+      </form>
+
+      <div class="auth-note">
+        لا يستطيع الموظف تحويل نفسه إلى مدير. صلاحيات الموظفين تُدار فقط من حساب المدير.
+      </div>
+    </div>
+  </div>
+
   <div class="app-shell">
     <aside id="sidebar" class="sidebar">
       <div class="sidebar-header">
@@ -1476,6 +1741,16 @@
           <div id="sideShopName" class="brand-title">المحل الرئيسي</div>
           <div class="brand-sub">كاشير أونلاين / أوفلاين</div>
         </div>
+      </div>
+
+      <div id="authUserBox" style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <span id="authUserPill" class="auth-user-pill">
+          <i class="fa-solid fa-user-shield"></i>
+          غير مسجل
+        </span>
+        <button id="logoutBtn" class="danger-btn" style="padding:8px 10px;border-radius:14px">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
       </div>
 
       <button class="nav-btn active" data-page="home"><span class="nav-icon"><i class="fa-solid fa-house"></i></span> الرئيسية</button>
@@ -1503,6 +1778,10 @@
         </div>
 
         <div style="display:flex;align-items:center;gap:8px;position:relative">
+          <button id="topLogoutBtn" class="icon-btn" title="تسجيل الخروج">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </button>
+
           <button id="syncNowBtn" class="icon-btn" title="المزامنة">
             <i class="fa-solid fa-rotate"></i>
             <span id="syncCountBadge" class="sync-badge" style="display:none">0</span>
@@ -1515,7 +1794,6 @@
           </button>
         </div>
       </header>
-
       <div id="syncPopover" class="sync-popover">
         <div class="sync-popover-head">
           <div class="sync-popover-title">
@@ -1661,15 +1939,22 @@
           </button>
         </div>
       </section>
+
       <section id="page-inventory" class="section">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
           <h1 style="font-size:24px;font-weight:900;margin:0">
             <i class="fa-solid fa-boxes-stacked"></i> المخزون والمنتجات
           </h1>
 
-          <button id="addProductBtn" class="primary-btn">
-            <i class="fa-solid fa-plus"></i> إضافة منتج
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="excelInventoryBtn" class="success-btn">
+              <i class="fa-solid fa-file-excel"></i> Excel
+            </button>
+
+            <button id="addProductBtn" class="primary-btn">
+              <i class="fa-solid fa-plus"></i> إضافة منتج
+            </button>
+          </div>
         </div>
 
         <div class="card">
@@ -1754,6 +2039,10 @@
             <button id="pdfInvoicesBtn" class="danger-btn">
               <i class="fa-solid fa-file-pdf"></i> PDF
             </button>
+
+            <button id="excelInvoicesBtn" class="success-btn">
+              <i class="fa-solid fa-file-excel"></i> Excel
+            </button>
           </div>
         </div>
 
@@ -1787,9 +2076,15 @@
             <i class="fa-solid fa-address-book"></i> حسابات الديون
           </h1>
 
-          <button id="addDebtCustomerBtn" class="gold-btn">
-            <i class="fa-solid fa-user-plus"></i> إضافة حساب
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="excelDebtsBtn" class="success-btn">
+              <i class="fa-solid fa-file-excel"></i> Excel
+            </button>
+
+            <button id="addDebtCustomerBtn" class="gold-btn">
+              <i class="fa-solid fa-user-plus"></i> إضافة حساب
+            </button>
+          </div>
         </div>
 
         <div class="debt-summary-strip">
@@ -1837,16 +2132,21 @@
           </div>
         </div>
       </section>
-
       <section id="page-purchases" class="section">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
           <h1 style="font-size:24px;font-weight:900;margin:0">
             <i class="fa-solid fa-truck-ramp-box"></i> المشتريات وإدخال البضاعة
           </h1>
 
-          <button id="addPurchaseBtn" class="primary-btn">
-            <i class="fa-solid fa-plus"></i> فاتورة مشتريات
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="excelPurchasesBtn" class="success-btn">
+              <i class="fa-solid fa-file-excel"></i> Excel
+            </button>
+
+            <button id="addPurchaseBtn" class="primary-btn">
+              <i class="fa-solid fa-plus"></i> فاتورة مشتريات
+            </button>
+          </div>
         </div>
 
         <div class="card">
@@ -1882,9 +2182,15 @@
             <i class="fa-solid fa-hand-holding-dollar"></i> دفعات التجار
           </h1>
 
-          <button id="addSupplierPaymentBtn" class="primary-btn">
-            <i class="fa-solid fa-plus"></i> إضافة دفعة تاجر
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="excelSupplierPaymentsBtn" class="success-btn">
+              <i class="fa-solid fa-file-excel"></i> Excel
+            </button>
+
+            <button id="addSupplierPaymentBtn" class="primary-btn">
+              <i class="fa-solid fa-plus"></i> إضافة دفعة تاجر
+            </button>
+          </div>
         </div>
 
         <div class="card">
@@ -1914,9 +2220,15 @@
             <i class="fa-solid fa-money-bill-wave"></i> المصروفات
           </h1>
 
-          <button id="addExpenseBtn" class="primary-btn">
-            <i class="fa-solid fa-plus"></i> إضافة مصروف
-          </button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="excelExpensesBtn" class="success-btn">
+              <i class="fa-solid fa-file-excel"></i> Excel
+            </button>
+
+            <button id="addExpenseBtn" class="primary-btn">
+              <i class="fa-solid fa-plus"></i> إضافة مصروف
+            </button>
+          </div>
         </div>
 
         <div class="card">
@@ -1938,6 +2250,7 @@
           </div>
         </div>
       </section>
+
       <section id="page-reports" class="section">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
           <h1 style="font-size:24px;font-weight:900;margin:0">
@@ -1994,6 +2307,7 @@
                 <button id="printReportsBtn" class="ghost-btn"><i class="fa-solid fa-print"></i> طباعة</button>
                 <button id="imageReportsBtn" class="success-btn"><i class="fa-solid fa-image"></i> صورة</button>
                 <button id="pdfReportsBtn" class="danger-btn"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                <button id="excelReportsBtn" class="success-btn"><i class="fa-solid fa-file-excel"></i> Excel</button>
               </div>
             </div>
 
@@ -2021,9 +2335,15 @@
           </div>
 
           <div class="card" style="margin-bottom:14px">
-            <h2 style="margin:0 0 12px;font-size:19px;font-weight:900">
-              <i class="fa-solid fa-triangle-exclamation"></i> البضاعة الناقصة
-            </h2>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+              <h2 style="margin:0;font-size:19px;font-weight:900">
+                <i class="fa-solid fa-triangle-exclamation"></i> البضاعة الناقصة
+              </h2>
+
+              <button id="excelLowStockBtn" class="success-btn">
+                <i class="fa-solid fa-file-excel"></i> Excel
+              </button>
+            </div>
 
             <div class="table-wrap">
               <table>
@@ -2111,6 +2431,46 @@
           <button id="saveSettingsBtn" class="primary-btn" style="margin-top:14px">
             <i class="fa-solid fa-floppy-disk"></i> حفظ الإعدادات
           </button>
+        </div>
+
+        <div id="adminSecurityBox" class="card" style="margin-bottom:14px">
+          <h2 style="margin:0 0 12px;font-size:19px;font-weight:900">
+            <i class="fa-solid fa-shield-halved"></i> أمان المدير
+          </h2>
+
+          <div class="form-grid">
+            <div>
+              <label class="field-label">كلمة مرور المدير الجديدة</label>
+              <input id="settingAdminPassword" type="password" class="input" placeholder="اكتب كلمة مرور جديدة">
+            </div>
+
+            <div>
+              <label class="field-label">تأكيد كلمة المرور</label>
+              <input id="settingAdminPassword2" type="password" class="input" placeholder="أعد كتابة كلمة المرور">
+            </div>
+          </div>
+
+          <button id="saveAdminPasswordBtn" class="primary-btn" style="margin-top:14px">
+            <i class="fa-solid fa-key"></i> تغيير كلمة مرور المدير
+          </button>
+        </div>
+
+        <div id="employeesSettingsBox" class="card" style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-size:19px;font-weight:900">
+              <i class="fa-solid fa-users-gear"></i> الموظفون والصلاحيات
+            </h2>
+
+            <button id="addEmployeeBtn" class="primary-btn">
+              <i class="fa-solid fa-user-plus"></i> إضافة موظف
+            </button>
+          </div>
+
+          <div class="muted" style="font-size:12px;margin-bottom:10px;line-height:1.8">
+            المدير فقط يستطيع إضافة أو حذف الموظفين وتحديد الصلاحيات. إذا تم حذف الموظف أو تغيير صلاحياته سيتم إخراجه تلقائيًا عند المزامنة أو التحديث.
+          </div>
+
+          <div id="employeesList"></div>
         </div>
 
         <div class="card" style="margin-bottom:14px">
@@ -2203,6 +2563,7 @@
   <div id="customerSuggestBox" class="customer-suggest-list"></div>
   <div id="smartSuggestBox" class="smart-suggest-list"></div>
   <div id="printArea" style="display:none"></div>
+
   <div id="floatingScanner" class="floating-scanner">
     <div class="floating-scanner-card">
       <div class="modal-head">
@@ -2226,7 +2587,6 @@
       </div>
     </div>
   </div>
-
   <template id="productFormTemplate">
     <form id="productForm">
       <input type="hidden" id="productId">
@@ -2336,7 +2696,7 @@
 
         <div>
           <label class="field-label">وحدة الإدخال</label>
-<select id="purchaseUnit" class="select"></select>
+          <select id="purchaseUnit" class="select"></select>
         </div>
 
         <div>
@@ -2477,6 +2837,41 @@
     </form>
   </template>
 
+  <template id="employeeFormTemplate">
+    <form id="employeeForm">
+      <input type="hidden" id="employeeId">
+
+      <div class="form-grid-compact">
+        <div>
+          <label class="field-label">اسم الموظف</label>
+          <input id="employeeFormName" class="input" required placeholder="مثال: أحمد">
+        </div>
+
+        <div>
+          <label class="field-label">كلمة المرور</label>
+          <input id="employeeFormPassword" type="password" class="input" placeholder="اتركها فارغة عند التعديل إذا لا تريد تغييرها">
+        </div>
+
+        <div class="full-row">
+          <label class="field-label">نوع الصلاحية</label>
+          <select id="employeeRoleSelect" class="select">
+            <option value="employee">موظف بصلاحيات محددة</option>
+            <option value="admin">صلاحيات مدير كاملة</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="employeePermissionsBox" style="margin-top:14px">
+        <label class="field-label">صلاحيات التبويبات</label>
+        <div id="employeePermissionsGrid" class="employee-grid"></div>
+      </div>
+
+      <button class="primary-btn" type="submit" style="width:100%;margin-top:14px">
+        <i class="fa-solid fa-floppy-disk"></i> حفظ الموظف
+      </button>
+    </form>
+  </template>
+
   <template id="scannerTemplate">
     <div>
       <div class="scanner-box">
@@ -2503,14 +2898,14 @@
   <template id="paymentChoiceTemplate">
     <div>
       <h3 style="font-size:19px;font-weight:900;margin:0 0 12px">اختر طريقة إتمام البيع</h3>
-
       <div id="paymentChoiceGrid" class="payment-choice-grid"></div>
     </div>
   </template>
+
   <script src="./firebase-config.js"></script>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
     import {
       getDatabase,
       ref,
@@ -2545,8 +2940,8 @@
 
     const FIREBASE_ROOT = externalFirebase.firebaseRoot || `cashier_units_pro_${DB_NAMESPACE}`;
     const FALLBACK_ROOTS = Array.isArray(externalFirebase.fallbackRoots) ? externalFirebase.fallbackRoots : [];
-    const DB_NAME = `cashier_units_pro_${DB_NAMESPACE}_db_v14`;
-    const DB_VERSION = 14;
+    const DB_NAME = `cashier_units_pro_${DB_NAMESPACE}_db_v15`;
+    const DB_VERSION = 15;
 
     const STORE_NAMES = [
       "products",
@@ -2557,8 +2952,28 @@
       "supplierPayments",
       "paymentAccounts",
       "settings",
+      "employees",
       "syncQueue",
       "localMeta"
+    ];
+
+    const AUTH_SESSION_KEY = `cashier_auth_session_${DB_NAMESPACE}_v1`;
+    const ADMIN_PROFILE_ID = "admin";
+    const DEFAULT_ADMIN_PIN = "0000";
+    const ADMIN_PERMISSION = "__admin__";
+
+    const AUTH_PAGES = [
+      { id: "home", label: "الرئيسية", icon: "fa-house" },
+      { id: "cashier", label: "الكاشير", icon: "fa-cart-shopping" },
+      { id: "freeInvoice", label: "فاتورة بدون مخزون", icon: "fa-file-circle-plus" },
+      { id: "inventory", label: "المخزون", icon: "fa-boxes-stacked" },
+      { id: "invoices", label: "الفواتير", icon: "fa-file-invoice-dollar" },
+      { id: "debts", label: "الديون", icon: "fa-address-book" },
+      { id: "purchases", label: "المشتريات", icon: "fa-truck-ramp-box" },
+      { id: "supplierPayments", label: "دفعات التجار", icon: "fa-hand-holding-dollar" },
+      { id: "expenses", label: "المصروفات", icon: "fa-money-bill-wave" },
+      { id: "reports", label: "التقارير", icon: "fa-chart-line" },
+      { id: "settings", label: "الإعدادات", icon: "fa-gear" }
     ];
 
     const $ = (id) => document.getElementById(id);
@@ -2571,7 +2986,12 @@
       purchases: [],
       supplierPayments: [],
       paymentAccounts: [],
+      employees: [],
       settings: null,
+      auth: {
+        ready: false,
+        user: null
+      },
       cart: [],
       freeLines: [],
       syncing: false,
@@ -2603,6 +3023,7 @@
       logo: "",
       localLogo: "",
       logoMode: "url",
+      adminPasswordHash: "",
       updatedAt: Date.now()
     };
 
@@ -2735,6 +3156,392 @@
       stopScanner();
     }
 
+    function simpleHash(str) {
+      const text = String(str || "");
+      let h = 2166136261;
+
+      for (let i = 0; i < text.length; i++) {
+        h ^= text.charCodeAt(i);
+        h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+      }
+
+      return String(h >>> 0);
+    }
+
+    function currentUser() {
+      return state.auth.user;
+    }
+
+    function isAdminUser(user = currentUser()) {
+      return !!user && (user.role === "admin" || (user.permissions || []).includes(ADMIN_PERMISSION));
+    }
+
+    function hasPermission(pageId) {
+      const user = currentUser();
+      if (!user) return false;
+      if (isAdminUser(user)) return true;
+      return Array.isArray(user.permissions) && user.permissions.includes(pageId);
+    }
+
+    function saveAuthSession(user) {
+      localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify({
+        id: user.id,
+        name: user.name,
+        role: user.role,
+        permissions: user.permissions || [],
+        loginAt: Date.now()
+      }));
+    }
+
+    function readAuthSession() {
+      try {
+        return JSON.parse(localStorage.getItem(AUTH_SESSION_KEY) || "null");
+      } catch {
+        return null;
+      }
+    }
+
+    function clearAuthSession() {
+      localStorage.removeItem(AUTH_SESSION_KEY);
+    }
+
+    function normalizeEmployee(emp = {}) {
+      return {
+        id: emp.id || uid("emp"),
+        name: emp.name || "موظف",
+        passwordHash: emp.passwordHash || simpleHash(emp.password || ""),
+        permissions: Array.isArray(emp.permissions) ? emp.permissions : [],
+        active: emp.active !== false,
+        createdAt: emp.createdAt || Date.now(),
+        updatedAt: emp.updatedAt || Date.now()
+      };
+    }
+
+    function getAdminPasswordHash() {
+      return state.settings?.adminPasswordHash || simpleHash(DEFAULT_ADMIN_PIN);
+    }
+
+
+    function setButtonLoading(btn, loading, text = "جاري التنفيذ...") {
+      if (!btn) return;
+      if (loading) {
+        if (!btn.dataset.oldHtml) btn.dataset.oldHtml = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> ${text}`;
+      } else {
+        btn.disabled = false;
+        if (btn.dataset.oldHtml) btn.innerHTML = btn.dataset.oldHtml;
+        delete btn.dataset.oldHtml;
+      }
+    }
+
+    function isDefaultAdminPassword() {
+      return getAdminPasswordHash() === simpleHash(DEFAULT_ADMIN_PIN);
+    }
+
+    async function fetchFreshSettingsFromFirebase() {
+      if (!navigator.onLine) return state.settings || defaultSettings;
+      try {
+        const snap = await get(ref(db, `${FIREBASE_ROOT}/settings/main`));
+        if (snap.exists()) {
+          const current = state.settings || defaultSettings;
+          const remote = snap.val() || {};
+          const remoteSettings = {
+            ...defaultSettings,
+            ...remote,
+            id: "main",
+            localLogo: current.localLogo || "",
+            logoMode: current.localLogo ? "local" : (remote.logo ? "url" : "default")
+          };
+          await idbPut("settings", remoteSettings);
+          state.settings = remoteSettings;
+          applySettingsToUI();
+          return remoteSettings;
+        }
+      } catch (e) {
+        console.warn("fetchFreshSettingsFromFirebase failed", e);
+      }
+      return state.settings || defaultSettings;
+    }
+
+    async function saveSettingsToFirebaseNow(settings) {
+      const cleanSettings = stripLocalOnlySettings(settings);
+      await idbPut("settings", settings);
+      if (navigator.onLine) {
+        await set(ref(db, `${FIREBASE_ROOT}/settings/main`), cleanSettings);
+      } else {
+        await enqueueSync({ type: "set", store: "settings", itemId: "main", data: cleanSettings });
+      }
+    }
+
+    function openForceAdminPasswordModal() {
+      if (!isAdminUser() || !isDefaultAdminPassword()) return;
+      openModal("تغيير كلمة مرور المدير إجباري", `
+        <div class="card" style="box-shadow:none">
+          <div style="background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:18px;padding:12px;margin-bottom:14px;font-weight:900;line-height:1.8">
+            لا يمكن استخدام النظام بكلمة المرور الافتراضية 0000. يجب تغيير كلمة مرور المدير الآن، وسيتم حفظها في Firebase.
+          </div>
+          <form id="forceAdminPasswordForm">
+            <div class="form-grid-compact">
+              <div>
+                <label class="field-label">كلمة المرور الجديدة</label>
+                <input id="forceAdminPassword1" type="password" class="input" required placeholder="اكتب كلمة مرور جديدة">
+              </div>
+              <div>
+                <label class="field-label">تأكيد كلمة المرور</label>
+                <input id="forceAdminPassword2" type="password" class="input" required placeholder="أعد كتابة كلمة المرور">
+              </div>
+            </div>
+            <button id="forceAdminPasswordBtn" class="primary-btn" type="submit" style="width:100%;margin-top:14px">
+              <i class="fa-solid fa-floppy-disk"></i> حفظ كلمة المرور والمتابعة
+            </button>
+          </form>
+        </div>
+      `);
+      if ($("modalCloseBtn")) $("modalCloseBtn").style.display = "none";
+      const backdrop = $("modalBackdrop");
+      if (backdrop) backdrop.onclick = null;
+      $("forceAdminPasswordForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const btn = $("forceAdminPasswordBtn");
+        const p1 = $("forceAdminPassword1").value.trim();
+        const p2 = $("forceAdminPassword2").value.trim();
+        if (p1.length < 4) return toast("كلمة المرور يجب أن تكون 4 خانات على الأقل");
+        if (p1 === DEFAULT_ADMIN_PIN) return toast("لا يمكن استخدام كلمة المرور الافتراضية 0000");
+        if (p1 !== p2) return toast("كلمتا المرور غير متطابقتين");
+        setButtonLoading(btn, true, "جاري الحفظ في Firebase...");
+        try {
+          state.settings = { ...defaultSettings, ...state.settings, id: "main", adminPasswordHash: simpleHash(p1), updatedAt: Date.now() };
+          await saveSettingsToFirebaseNow(state.settings);
+          if ($("modalCloseBtn")) $("modalCloseBtn").style.display = "";
+          closeModal();
+          bindModalCloseAgain();
+          toast("تم حفظ كلمة مرور المدير في Firebase بنجاح");
+        } catch (err) {
+          console.error(err);
+          toast("فشل حفظ كلمة المرور في Firebase، تأكد من الاتصال");
+        } finally {
+          setButtonLoading(btn, false);
+        }
+      };
+    }
+
+    function bindModalCloseAgain() {
+      if ($("modalCloseBtn")) $("modalCloseBtn").onclick = closeModal;
+      if ($("modalBackdrop")) {
+        $("modalBackdrop").onclick = (e) => {
+          if (e.target.id === "modalBackdrop") closeModal();
+        };
+      }
+    }
+
+    function setAuthUser(user) {
+      state.auth.user = user;
+      state.auth.ready = true;
+
+      if (user) {
+        saveAuthSession(user);
+        $("authLock")?.classList.add("hide");
+        if ($("authLock")) $("authLock").style.display = "none";
+      } else {
+        clearAuthSession();
+        $("authLock")?.classList.remove("hide");
+        if ($("authLock")) $("authLock").style.display = "flex";
+      }
+
+      applyPermissionsUI();
+    }
+
+    function logout() {
+  try {
+    localStorage.removeItem(AUTH_SESSION_KEY);
+    sessionStorage.removeItem(AUTH_SESSION_KEY);
+  } catch {}
+
+  if (!state.auth) state.auth = {};
+  state.auth.user = null;
+
+  const lock = $("authLock");
+  if (lock) {
+    lock.classList.remove("hide");
+    lock.style.display = "flex";
+  }
+
+  const pill = $("authUserPill");
+  if (pill) {
+    pill.innerHTML = `<i class="fa-solid fa-lock"></i> غير مسجل`;
+  }
+
+  closeModal();
+  toast("تم تسجيل الخروج");
+}
+
+    function applyPermissionsUI() {
+      const user = currentUser();
+
+      if ($("authUserPill")) {
+        if (user) {
+          $("authUserPill").innerHTML = `
+            <i class="fa-solid ${isAdminUser(user) ? "fa-user-shield" : "fa-user"}"></i>
+            ${escapeHtml(user.name || "مستخدم")}
+          `;
+        } else {
+          $("authUserPill").innerHTML = `<i class="fa-solid fa-lock"></i> غير مسجل`;
+        }
+      }
+
+      document.querySelectorAll(".nav-btn[data-page], .bottom-btn[data-page]").forEach(btn => {
+        const page = btn.dataset.page;
+        btn.classList.toggle("auth-hidden", !!user && !hasPermission(page));
+      });
+
+      if ($("adminSecurityBox")) $("adminSecurityBox").style.display = isAdminUser(user) ? "block" : "none";
+      if ($("employeesSettingsBox")) $("employeesSettingsBox").style.display = isAdminUser(user) ? "block" : "none";
+
+      if (user && !hasPermission(getActivePage())) {
+        const first = AUTH_PAGES.find(p => hasPermission(p.id));
+        if (first) switchPage(first.id);
+      }
+    }
+
+    function getActivePage() {
+      const active = document.querySelector(".section.active");
+      if (!active) return "home";
+      return active.id.replace("page-", "");
+    }
+
+    async function validateCurrentEmployeeSession() {
+      const user = currentUser();
+      if (!user || isAdminUser(user)) return true;
+
+      const fresh = state.employees.find(e => e.id === user.id);
+
+      if (!fresh || fresh.active === false) {
+        logout();
+        toast("تم إيقاف أو حذف حساب الموظف من المدير");
+        return false;
+      }
+
+      const oldPerm = JSON.stringify(user.permissions || []);
+      const newPerm = JSON.stringify(fresh.permissions || []);
+
+      if (oldPerm !== newPerm || user.name !== fresh.name) {
+        const updatedUser = {
+          id: fresh.id,
+          name: fresh.name,
+          role: fresh.permissions.includes(ADMIN_PERMISSION) ? "admin" : "employee",
+          permissions: fresh.permissions || []
+        };
+
+        setAuthUser(updatedUser);
+        toast("تم تحديث صلاحيات الموظف");
+      }
+
+      return true;
+    }
+
+    async function tryRestoreAuthSession() {
+      const saved = readAuthSession();
+
+      if (!saved) {
+        setAuthUser(null);
+        return;
+      }
+
+      if (saved.role === "admin") {
+        await fetchFreshSettingsFromFirebase();
+        setAuthUser({
+          id: "admin",
+          name: "المدير",
+          role: "admin",
+          permissions: [ADMIN_PERMISSION]
+        });
+        if (isDefaultAdminPassword()) setTimeout(() => openForceAdminPasswordModal(), 250);
+        return;
+      }
+
+      const emp = state.employees.find(e => e.id === saved.id && e.active !== false);
+
+      if (!emp) {
+        clearAuthSession();
+        setAuthUser(null);
+        return;
+      }
+
+      setAuthUser({
+        id: emp.id,
+        name: emp.name,
+        role: emp.permissions.includes(ADMIN_PERMISSION) ? "admin" : "employee",
+        permissions: emp.permissions || []
+      });
+    }
+
+    function bindAuthLoginEvents() {
+      $("authAdminTab").onclick = () => {
+        $("authAdminTab").classList.add("active");
+        $("authEmployeeTab").classList.remove("active");
+        $("adminLoginForm").style.display = "block";
+        $("employeeLoginForm").style.display = "none";
+      };
+
+      $("authEmployeeTab").onclick = () => {
+        $("authEmployeeTab").classList.add("active");
+        $("authAdminTab").classList.remove("active");
+        $("adminLoginForm").style.display = "none";
+        $("employeeLoginForm").style.display = "block";
+      };
+
+      $("adminLoginForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const btn = e.submitter || $("adminLoginForm").querySelector("button[type='submit']");
+        const pass = $("adminPasswordInput").value.trim();
+        setButtonLoading(btn, true, "جاري فحص كلمة المرور...");
+        try {
+          await fetchFreshSettingsFromFirebase();
+          if (simpleHash(pass) !== getAdminPasswordHash()) {
+            toast("كلمة مرور المدير غير صحيحة");
+            return;
+          }
+          $("adminPasswordInput").value = "";
+          setAuthUser({ id: "admin", name: "المدير", role: "admin", permissions: [ADMIN_PERMISSION] });
+          toast("تم دخول المدير");
+          if (isDefaultAdminPassword()) setTimeout(() => openForceAdminPasswordModal(), 250);
+        } catch (err) {
+          console.error(err);
+          toast("تعذر فحص كلمة المرور من Firebase");
+        } finally {
+          setButtonLoading(btn, false);
+        }
+      };
+
+      $("employeeLoginForm").onsubmit = async (e) => {
+        e.preventDefault();
+        const btn = e.submitter || $("employeeLoginForm").querySelector("button[type='submit']");
+        const name = $("employeeNameInput").value.trim();
+        const pass = $("employeePasswordInput").value.trim();
+        setButtonLoading(btn, true, "جاري تسجيل الدخول...");
+        try {
+          if (navigator.onLine) {
+            await loadFirebaseRoot(FIREBASE_ROOT);
+            await loadLocalData(true);
+          }
+          const emp = state.employees.find(x => x.active !== false && String(x.name || "").trim() === name && x.passwordHash === simpleHash(pass));
+          if (!emp) {
+            toast("بيانات الموظف غير صحيحة أو الحساب موقوف");
+            return;
+          }
+          $("employeePasswordInput").value = "";
+          setAuthUser({ id: emp.id, name: emp.name, role: emp.permissions.includes(ADMIN_PERMISSION) ? "admin" : "employee", permissions: emp.permissions || [] });
+          toast(`أهلاً ${emp.name}`);
+        } catch (err) {
+          console.error(err);
+          toast("حدث خطأ أثناء تسجيل دخول الموظف");
+        } finally {
+          setButtonLoading(btn, false);
+        }
+      };
+    }
+
     function unitLabel(unit, custom = "") {
       const map = {
         piece: "قطعة",
@@ -2843,6 +3650,7 @@
         String(p.code || "").trim() === c
       ) || null;
     }
+
     function getSaleUnitOptions(product) {
       const p = normalizeProduct(product);
 
@@ -3040,7 +3848,8 @@
         purchases: "المشتريات",
         supplierPayments: "دفعات التجار",
         paymentAccounts: "حسابات الدفع",
-        settings: "الإعدادات"
+        settings: "الإعدادات",
+        employees: "الموظفين"
       };
 
       return map[store] || store;
@@ -3134,12 +3943,65 @@
     async function removeLocal(store, id, sync = true) {
       await idbDelete(store, id);
 
+      const stateKeyMap = {
+        products: "products",
+        invoices: "invoices",
+        customers: "customers",
+        expenses: "expenses",
+        purchases: "purchases",
+        supplierPayments: "supplierPayments",
+        paymentAccounts: "paymentAccounts",
+        employees: "employees"
+      };
+
+      const stateKey = stateKeyMap[store] || store;
+
+      if (Array.isArray(state[stateKey])) {
+        state[stateKey] = state[stateKey].filter(item => item.id !== id);
+      }
+
+      if (store === "products") {
+        state.cart = state.cart.filter(line => line.productId !== id);
+      }
+
       if (sync) {
-        await enqueueSync({
-          type: "remove",
-          store,
-          itemId: id
-        });
+        const queue = await idbGetAll("syncQueue");
+
+        for (const q of queue) {
+          if (q.store === store && q.itemId === id && q.type !== "remove") {
+            await idbDelete("syncQueue", q.id);
+          }
+        }
+
+        const alreadyQueued = queue.some(q =>
+          q.store === store &&
+          q.itemId === id &&
+          q.type === "remove"
+        );
+
+        if (!alreadyQueued) {
+          await enqueueSync({
+            type: "remove",
+            store,
+            itemId: id,
+            data: null
+          });
+        }
+      }
+
+      if (typeof rebuildCustomerBalances === "function") {
+        rebuildCustomerBalances(false);
+      }
+
+      if (store === "employees") {
+        await validateCurrentEmployeeSession();
+      }
+
+      renderAll();
+      await refreshPendingCount();
+
+      if (navigator.onLine) {
+        setTimeout(() => syncNow(false), 250);
       }
     }
 
@@ -3161,6 +4023,7 @@
         if (store === "products") remote = normalizeProduct(remote);
         if (store === "customers") remote = normalizeCustomer(remote);
         if (store === "paymentAccounts") remote = normalizePaymentAccount(remote);
+        if (store === "employees") remote = normalizeEmployee(remote);
 
         if (store === "settings") {
           const current = map.get(remote.id);
@@ -3216,7 +4079,8 @@
           "expenses",
           "purchases",
           "supplierPayments",
-          "paymentAccounts"
+          "paymentAccounts",
+          "employees"
         ];
 
         for (let i = 0; i < stores.length; i++) {
@@ -3290,7 +4154,8 @@
         "expenses",
         "purchases",
         "supplierPayments",
-        "paymentAccounts"
+        "paymentAccounts",
+        "employees"
       ];
 
       let totalItems = 0;
@@ -3376,78 +4241,163 @@
         "expenses",
         "purchases",
         "supplierPayments",
-        "paymentAccounts"
+        "paymentAccounts",
+        "employees"
       ];
+
+      function stateKeyForStore(store) {
+        const map = {
+          products: "products",
+          invoices: "invoices",
+          customers: "customers",
+          expenses: "expenses",
+          purchases: "purchases",
+          supplierPayments: "supplierPayments",
+          paymentAccounts: "paymentAccounts",
+          employees: "employees"
+        };
+
+        return map[store] || store;
+      }
+
+      async function hasPendingLocalOperation(store, itemId) {
+        const queue = await idbGetAll("syncQueue");
+        return queue.some(q => q.store === store && q.itemId === itemId);
+      }
+
+      async function applyRemoteSnapshot(store, remoteObj) {
+        const remoteMap = remoteObj || {};
+        const remoteIds = new Set(Object.keys(remoteMap));
+        const localItems = await idbGetAll(store);
+        const stateKey = stateKeyForStore(store);
+
+        for (const local of localItems) {
+          if (!local || !local.id) continue;
+
+          const pending = await hasPendingLocalOperation(store, local.id);
+
+          if (!remoteIds.has(local.id) && !pending) {
+            await idbDelete(store, local.id);
+
+            if (Array.isArray(state[stateKey])) {
+              state[stateKey] = state[stateKey].filter(x => x.id !== local.id);
+            }
+
+            if (store === "products") {
+              state.cart = state.cart.filter(line => line.productId !== local.id);
+            }
+          }
+        }
+
+        for (let remote of Object.values(remoteMap)) {
+          if (!remote || !remote.id) continue;
+
+          const pending = await hasPendingLocalOperation(store, remote.id);
+          if (pending) continue;
+
+          if (store === "products") remote = normalizeProduct(remote);
+          if (store === "customers") remote = normalizeCustomer(remote);
+          if (store === "paymentAccounts") remote = normalizePaymentAccount(remote);
+          if (store === "employees") remote = normalizeEmployee(remote);
+
+          const localOld = localItems.find(x => x.id === remote.id);
+          const remoteTime = Number(remote.updatedAt || remote.createdAt || 0);
+          const localTime = Number(localOld?.updatedAt || localOld?.createdAt || 0);
+
+          if (!localOld || remoteTime >= localTime) {
+            await idbPut(store, remote);
+
+            if (Array.isArray(state[stateKey])) {
+              const i = state[stateKey].findIndex(x => x.id === remote.id);
+              if (i >= 0) state[stateKey][i] = remote;
+              else state[stateKey].push(remote);
+            }
+          }
+        }
+
+        if (store === "employees") {
+          await validateCurrentEmployeeSession();
+        }
+      }
 
       stores.forEach((store) => {
         onValue(ref(db, `${FIREBASE_ROOT}/${store}`), async (snap) => {
-          if (!snap.exists()) return;
+          try {
+            updateSyncUi({
+              spin: true,
+              title: "تنزيل تحديثات",
+              status: `تحديث ${syncStoreLabel(store)}...`,
+              progress: 35
+            });
 
-          updateSyncUi({
-            spin: true,
-            title: "تنزيل تحديثات",
-            status: `وصل تحديث جديد: ${syncStoreLabel(store)}`,
-            progress: 25
-          });
+            const remoteObj = snap.exists() ? (snap.val() || {}) : {};
 
-          const count = await mergeStore(store, mapFirebaseObjectToArray(snap.val()), FIREBASE_ROOT);
+            await applyRemoteSnapshot(store, remoteObj);
 
-          if (count > 0) {
-            await loadLocalData(true);
+            if (typeof rebuildCustomerBalances === "function") {
+              rebuildCustomerBalances(false);
+            }
+
             renderAll();
 
             updateSyncUi({
               progress: 100,
-              status: `تم تنزيل ${count} تحديث`,
+              status: `تم تحديث ${syncStoreLabel(store)}`,
               operation: {
                 store: syncStoreLabel(store),
-                text: `تحديث مباشر ${count}`,
+                text: "تحديث مباشر",
                 done: true
               }
             });
-          }
 
-          setTimeout(() => {
-            if (!state.syncing) updateSyncUi({ spin: false });
-          }, 700);
+            setTimeout(() => {
+              if (!state.syncing) updateSyncUi({ spin: false });
+            }, 700);
+          } catch (e) {
+            console.warn("Realtime sync error:", store, e);
+
+            updateSyncUi({
+              spin: false,
+              status: "تعذر تنزيل تحديث مباشر، سيتم المحاولة لاحقًا",
+              operation: {
+                store: syncStoreLabel(store),
+                text: "فشل تحديث مباشر",
+                done: false
+              }
+            });
+          }
         });
       });
 
       onValue(ref(db, `${FIREBASE_ROOT}/settings/main`), async (snap) => {
         if (!snap.exists()) return;
 
-        updateSyncUi({
-          spin: true,
-          title: "تنزيل إعدادات",
-          status: "تنزيل إعدادات المحل",
-          progress: 35
-        });
+        try {
+          const current = state.settings || (await idbGet("settings", "main")) || defaultSettings;
+          const remoteSettings = {
+            ...defaultSettings,
+            ...snap.val(),
+            localLogo: current.localLogo || "",
+            logoMode: current.localLogo ? "local" : (snap.val()?.logo ? "url" : "default")
+          };
 
-        const current = state.settings || (await idbGet("settings", "main")) || defaultSettings;
+          await idbPut("settings", remoteSettings);
+          state.settings = remoteSettings;
 
-        await mergeStore("settings", [{
-          ...defaultSettings,
-          ...snap.val(),
-          localLogo: current.localLogo || "",
-          logoMode: current.localLogo ? "local" : (snap.val()?.logo ? "url" : "default")
-        }], FIREBASE_ROOT);
+          renderAll();
 
-        await loadLocalData(true);
-        renderAll();
-
-        updateSyncUi({
-          progress: 100,
-          status: "تم تحديث إعدادات المحل",
-          operation: {
-            store: "الإعدادات",
-            text: "تحديث مباشر",
-            done: true
-          }
-        });
-
-        setTimeout(() => {
-          if (!state.syncing) updateSyncUi({ spin: false });
-        }, 700);
+          updateSyncUi({
+            progress: 100,
+            status: "تم تحديث إعدادات المحل",
+            operation: {
+              store: "الإعدادات",
+              text: "تحديث مباشر",
+              done: true
+            }
+          });
+        } catch (e) {
+          console.warn("settings realtime error", e);
+        }
       });
     }
 
@@ -3582,7 +4532,8 @@
         setTimeout(() => syncNow(false), 6000);
       }
     }
-function applySettingsToUI() {
+
+    function applySettingsToUI() {
       const s = state.settings || defaultSettings;
       const logo = s.localLogo || s.logo || makeLogoDataUrl(s.shopName || "المحل");
 
@@ -3606,12 +4557,19 @@ function applySettingsToUI() {
       state.purchases = await idbGetAll("purchases");
       state.supplierPayments = await idbGetAll("supplierPayments");
       state.paymentAccounts = (await idbGetAll("paymentAccounts")).map(normalizePaymentAccount);
+      state.employees = (await idbGetAll("employees")).map(normalizeEmployee);
 
       const settingsRows = await idbGetAll("settings");
       state.settings = {
         ...defaultSettings,
         ...(settingsRows[0] || {})
       };
+
+      if (!state.settings.adminPasswordHash) {
+        state.settings.adminPasswordHash = simpleHash(DEFAULT_ADMIN_PIN);
+        state.settings.updatedAt = Date.now();
+        await idbPut("settings", state.settings);
+      }
 
       if (!settingsRows.length) {
         await idbPut("settings", state.settings);
@@ -3638,7 +4596,6 @@ function applySettingsToUI() {
 
       await refreshPendingCount();
     }
-
     function periodFilter(items, period, dateField = "createdAt", customDate = "") {
       if (period === "all") return items;
 
@@ -3698,8 +4655,10 @@ function applySettingsToUI() {
       renderExpenses();
       renderReports();
       renderSettingsAccounts();
+      renderEmployees();
       renderNotifications();
       applySettingsToUI();
+      applyPermissionsUI();
     }
 
     function renderHome() {
@@ -3749,6 +4708,223 @@ function applySettingsToUI() {
       $("homeProductsGrid").innerHTML =
         products.map(productCardHtml).join("") ||
         `<div class="muted">لا توجد منتجات بعد</div>`;
+    }
+
+    function renderEmployees() {
+      const box = $("employeesList");
+      if (!box) return;
+
+      if (!isAdminUser()) {
+        box.innerHTML = `<div class="muted">إدارة الموظفين للمدير فقط</div>`;
+        return;
+      }
+
+      box.innerHTML = state.employees.map(emp => {
+        const isEmpAdmin = (emp.permissions || []).includes(ADMIN_PERMISSION);
+        const permLabels = isEmpAdmin
+          ? "صلاحيات مدير كاملة"
+          : AUTH_PAGES
+              .filter(p => (emp.permissions || []).includes(p.id))
+              .map(p => p.label)
+              .join("، ") || "بدون صلاحيات";
+
+        return `
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border:1px solid #e5e7eb;border-radius:18px;margin-bottom:8px;background:#fff">
+            <div>
+              <b>${escapeHtml(emp.name)}</b>
+              <div class="muted" style="font-size:12px;line-height:1.8">
+                ${escapeHtml(permLabels)}
+              </div>
+              <span class="badge ${emp.active === false ? "red" : "green"}">
+                ${emp.active === false ? "موقوف" : "فعال"}
+              </span>
+            </div>
+
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button class="ghost-btn" data-edit-employee="${emp.id}">
+                <i class="fa-solid fa-pen"></i> تعديل
+              </button>
+
+              <button class="danger-btn" data-delete-employee="${emp.id}">
+                <i class="fa-solid fa-trash"></i> حذف
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("") || `<div class="muted">لا يوجد موظفون بعد</div>`;
+    }
+
+    function openEmployeeForm(employeeId = "") {
+      if (!isAdminUser()) {
+        toast("إدارة الموظفين للمدير فقط");
+        return;
+      }
+
+      const node = cloneTemplate("employeeFormTemplate");
+      openModal(employeeId ? "تعديل موظف" : "إضافة موظف", node, true);
+
+      const old = employeeId ? state.employees.find(e => e.id === employeeId) : null;
+
+      $("employeePermissionsGrid").innerHTML = AUTH_PAGES.map(p => `
+        <label class="perm-card">
+          <input type="checkbox" value="${p.id}" class="employee-permission-check">
+          <span><i class="fa-solid ${p.icon}"></i> ${escapeHtml(p.label)}</span>
+        </label>
+      `).join("");
+
+      if (old) {
+        $("employeeId").value = old.id;
+        $("employeeFormName").value = old.name || "";
+        $("employeeRoleSelect").value = (old.permissions || []).includes(ADMIN_PERMISSION) ? "admin" : "employee";
+
+        document.querySelectorAll(".employee-permission-check").forEach(ch => {
+          ch.checked = (old.permissions || []).includes(ch.value);
+        });
+      }
+
+      function refreshRoleUI() {
+        const isFullAdmin = $("employeeRoleSelect").value === "admin";
+        $("employeePermissionsBox").style.display = isFullAdmin ? "none" : "block";
+      }
+
+      $("employeeRoleSelect").onchange = refreshRoleUI;
+      refreshRoleUI();
+
+      $("employeeForm").onsubmit = async (e) => {
+        e.preventDefault();
+
+        if (!isAdminUser()) {
+          toast("إدارة الموظفين للمدير فقط");
+          return;
+        }
+
+        const name = $("employeeFormName").value.trim();
+        const pass = $("employeeFormPassword").value.trim();
+
+        if (!name) return toast("أدخل اسم الموظف");
+
+        if (!old && !pass) {
+          toast("أدخل كلمة مرور للموظف الجديد");
+          return;
+        }
+
+        const duplicate = state.employees.find(e =>
+          e.id !== old?.id &&
+          String(e.name || "").trim() === name
+        );
+
+        if (duplicate) {
+          toast("يوجد موظف بنفس الاسم");
+          return;
+        }
+
+        const role = $("employeeRoleSelect").value;
+        let permissions = [];
+
+        if (role === "admin") {
+          permissions = [ADMIN_PERMISSION];
+        } else {
+          permissions = Array.from(document.querySelectorAll(".employee-permission-check:checked"))
+            .map(ch => ch.value);
+
+          if (!permissions.length) {
+            toast("اختر صلاحية واحدة على الأقل");
+            return;
+          }
+        }
+
+        const employee = normalizeEmployee({
+          ...(old || {}),
+          id: old?.id || uid("emp"),
+          name,
+          passwordHash: pass ? simpleHash(pass) : old?.passwordHash,
+          permissions,
+          active: true,
+          createdAt: old?.createdAt || Date.now(),
+          updatedAt: Date.now()
+        });
+
+        await saveLocal("employees", employee, true);
+
+        const i = state.employees.findIndex(e => e.id === employee.id);
+        if (i >= 0) state.employees[i] = employee;
+        else state.employees.push(employee);
+
+        closeModal();
+        renderAll();
+        toast(old ? "تم تعديل الموظف والصلاحيات" : "تم إضافة الموظف");
+      };
+    }
+
+    async function deleteEmployee(employeeId) {
+      if (!isAdminUser()) {
+        toast("إدارة الموظفين للمدير فقط");
+        return;
+      }
+
+      const emp = state.employees.find(e => e.id === employeeId);
+      if (!emp) return;
+
+      if (!confirm(`حذف الموظف ${emp.name}؟ سيتم إخراجه تلقائياً من جهازه عند المزامنة.`)) return;
+
+      state.employees = state.employees.filter(e => e.id !== employeeId);
+      await removeLocal("employees", employeeId, true);
+
+      renderAll();
+      toast("تم حذف الموظف");
+    }
+
+    async function changeAdminPassword() {
+      if (!isAdminUser()) {
+        toast("تغيير كلمة مرور المدير للمدير فقط");
+        return;
+      }
+
+      const btn = $("saveAdminPasswordBtn");
+      const p1Input = $("settingAdminPassword");
+      const p2Input = $("settingAdminPassword2");
+      const p1 = String(p1Input?.value || "").trim();
+      const p2 = String(p2Input?.value || "").trim();
+
+      if (!p1) {
+        toast("أدخل كلمة مرور المدير الجديدة");
+        p1Input?.focus();
+        return;
+      }
+      if (!p2) {
+        toast("أعد كتابة كلمة مرور المدير للتأكيد");
+        p2Input?.focus();
+        return;
+      }
+      if (p1.length < 4) {
+        toast("كلمة مرور المدير يجب أن تكون 4 خانات على الأقل");
+        p1Input?.focus();
+        return;
+      }
+      if (p1 === DEFAULT_ADMIN_PIN) {
+        toast("لا يمكن استخدام كلمة المرور الافتراضية 0000");
+        p1Input?.focus();
+        return;
+      }
+      if (p1 !== p2) {
+        toast("كلمتا المرور غير متطابقتين");
+        p2Input?.focus();
+        return;
+      }
+
+      setButtonLoading(btn, true, "جاري الحفظ في Firebase...");
+      try {
+        state.settings = { ...defaultSettings, ...state.settings, id: "main", adminPasswordHash: simpleHash(p1), updatedAt: Date.now() };
+        await saveSettingsToFirebaseNow(state.settings);
+        p1Input.value = "";
+        p2Input.value = "";
+        toast("تم تغيير كلمة مرور المدير وحفظها في Firebase");
+      } catch (err) {
+        console.error(err);
+        toast("فشل حفظ كلمة المرور في Firebase");
+      } finally {
+        setButtonLoading(btn, false);
+      }
     }
 
     function addToCart(product, selectedUnit = "") {
@@ -3880,7 +5056,8 @@ function applySettingsToUI() {
 
       return { subtotal, discount, total, cost, profit };
     }
-function renderSuggestions() {
+
+    function renderSuggestions() {
       const q = $("cashierSearch").value.trim().toLowerCase();
       const box = $("suggestionsBox");
 
@@ -3934,7 +5111,6 @@ function renderSuggestions() {
 
       renderFreeInvoice();
     }
-
     function renderFreeInvoice() {
       const box = $("freeInvoiceLines");
       if (!box) return;
@@ -4192,7 +5368,7 @@ function renderSuggestions() {
       `;
     }
 
-    function renderInvoices() {
+    function getFilteredInvoices() {
       const q = ($("invoiceSearch")?.value || "").trim().toLowerCase();
       const period = $("invoicePeriod")?.value || "today";
       const custom = $("invoiceCustomDate")?.value || "";
@@ -4202,7 +5378,7 @@ function renderSuggestions() {
         $("invoiceCustomDate").style.display = period === "custom" ? "block" : "none";
       }
 
-      const rows = periodFilter(state.invoices, period, "createdAt", custom)
+      return periodFilter(state.invoices, period, "createdAt", custom)
         .filter(inv => {
           const itemsText = (inv.items || [])
             .map(item => `${item.name || ""} ${item.qtyText || ""} ${item.unitLabel || ""}`)
@@ -4226,7 +5402,11 @@ function renderSuggestions() {
 
           return searchOk && statusOk && folderOk;
         })
-        .sort((a, b) => Number(b.createdAt || 0) - Number(a.createdAt || 0))
+        .sort((a, b) => Number(b.createdAt || 0) - Number(a.createdAt || 0));
+    }
+
+    function renderInvoices() {
+      const rows = getFilteredInvoices()
         .map(inv => {
           return `
             <tr>
@@ -4259,7 +5439,8 @@ function renderSuggestions() {
         rows ||
         `<tr><td colspan="11" class="muted" style="text-align:center">لا توجد فواتير</td></tr>`;
     }
-function getCustomerInvoices(customer) {
+
+    function getCustomerInvoices(customer) {
       return state.invoices
         .filter(inv =>
           inv.customerId === customer.id ||
@@ -4343,7 +5524,6 @@ function getCustomerInvoices(customer) {
         state.customers.forEach(c => saveLocal("customers", c, true));
       }
     }
-
     function renderDebts() {
       rebuildCustomerBalances(false);
 
@@ -4515,7 +5695,8 @@ function getCustomerInvoices(customer) {
         rows ||
         `<tr><td colspan="5" class="muted" style="text-align:center">لا توجد مصروفات</td></tr>`;
     }
-function renderReports() {
+
+    function getFilteredReportData() {
       const period = $("reportsPeriod")?.value || "today";
       const custom = $("reportsCustomDate")?.value || "";
 
@@ -4523,9 +5704,21 @@ function renderReports() {
         $("reportsCustomDate").style.display = period === "custom" ? "block" : "none";
       }
 
-      const invoices = periodFilter(state.invoices, period, "createdAt", custom);
-      const expenses = periodFilter(state.expenses, period, "createdAt", custom);
-      const supplierPayments = periodFilter(state.supplierPayments, period, "createdAt", custom);
+      return {
+        period,
+        custom,
+        invoices: periodFilter(state.invoices, period, "createdAt", custom),
+        expenses: periodFilter(state.expenses, period, "createdAt", custom),
+        purchases: periodFilter(state.purchases, period, "createdAt", custom),
+        supplierPayments: periodFilter(state.supplierPayments, period, "createdAt", custom)
+      };
+    }
+
+    function renderReports() {
+      const data = getFilteredReportData();
+      const invoices = data.invoices;
+      const expenses = data.expenses;
+      const supplierPayments = data.supplierPayments;
 
       const salesTotal = invoices.reduce((s, x) => s + cleanNumber(x.total), 0);
       const profitTotal = invoices.reduce((s, x) => s + cleanNumber(x.profit), 0);
@@ -4652,6 +5845,11 @@ function renderReports() {
     }
 
     function switchPage(page) {
+      if (!hasPermission(page)) {
+        toast("ليس لديك صلاحية للدخول إلى هذه الصفحة");
+        return;
+      }
+
       document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
       $(`page-${page}`)?.classList.add("active");
 
@@ -4662,7 +5860,6 @@ function renderReports() {
       $("sidebar").classList.remove("open");
       renderAll();
     }
-
     function refreshProductUnitUI() {
       const unitType = $("productUnitType").value;
       const isCarton = unitType === "carton";
@@ -4796,7 +5993,8 @@ function renderReports() {
         toast("تم حفظ المنتج وتحويله للوحدة الأساسية");
       };
     }
-function generateEAN13() {
+
+    function generateEAN13() {
       let code = "729" + Math.floor(Math.random() * 1000000000).toString().padStart(9, "0");
       const digits = code.split("").map(Number);
       const sum = digits.reduce((s, d, i) => s + d * (i % 2 === 0 ? 1 : 3), 0);
@@ -5353,7 +6551,8 @@ function generateEAN13() {
 
       return customer;
     }
-function openPaymentChoice(isFreeInvoice = false) {
+
+    function openPaymentChoice(isFreeInvoice = false) {
       const source = isFreeInvoice ? "free" : "cart";
 
       if (source === "cart" && !state.cart.length) {
@@ -5570,7 +6769,6 @@ function openPaymentChoice(isFreeInvoice = false) {
         openDebtCustomerPicker(source, totals);
       }
     }
-
     function openDebtCustomerPicker(source, totals) {
       const list = state.customers
         .sort((a,b) => Number(b.updatedAt || 0) - Number(a.updatedAt || 0))
@@ -5705,7 +6903,8 @@ function openPaymentChoice(isFreeInvoice = false) {
         });
       };
     }
-function buildSaleItems(source) {
+
+    function buildSaleItems(source) {
       if (source === "free") {
         return state.freeLines
           .filter(x => x.name && cleanNumber(x.price) > 0)
@@ -5730,18 +6929,18 @@ function buildSaleItems(source) {
     }
 
     function validateStockForCart() {
-  for (const line of state.cart) {
-    const product = getProductById(line.productId);
-    if (!product) continue;
+      for (const line of state.cart) {
+        const product = getProductById(line.productId);
+        if (!product) continue;
 
-    if (cleanNumber(product.stock) < cleanNumber(line.baseQty)) {
-      toast(`المخزون غير كافٍ للصنف: ${product.name}`);
-      return false;
+        if (cleanNumber(product.stock) < cleanNumber(line.baseQty)) {
+          toast(`المخزون غير كافٍ للصنف: ${product.name}`);
+          return false;
+        }
+      }
+
+      return true;
     }
-  }
-
-  return true;
-}
 
     async function saveSaleWithPayment(payment) {
       const source = payment.source || "cart";
@@ -5773,6 +6972,8 @@ function buildSaleItems(source) {
         source,
         createdAt: Date.now(),
         updatedAt: Date.now(),
+        employeeId: currentUser()?.id || "",
+        employeeName: currentUser()?.name || "",
         customerId: payment.customerId || "",
         customerName: payment.customerName || "",
         customerPhone: payment.customerPhone || "",
@@ -6040,7 +7241,6 @@ function buildSaleItems(source) {
         toast("تم تعديل الفاتورة وإعادة الحسابات");
       };
     }
-
     async function payCustomer(customerId) {
       const customer = state.customers.find(c => c.id === customerId);
       if (!customer) return;
@@ -6108,6 +7308,7 @@ function buildSaleItems(source) {
         toast("تم حفظ الدفعة وإعادة الحساب");
       };
     }
+
     function addManualDebt(customerId) {
       const customer = state.customers.find(c => c.id === customerId);
       if (!customer) return;
@@ -6305,6 +7506,48 @@ function buildSaleItems(source) {
       toast("تم تحويل الدين اليدوي إلى مكتمل وإعادة الحساب");
     }
 
+    function openManualDebtViewOnly(customerId, debtId) {
+      const customer = state.customers.find(c => c.id === customerId);
+      if (!customer) return;
+
+      const debt = (customer.manualDebts || []).find(d => d.id === debtId);
+      if (!debt) return;
+
+      openModal("عرض تنبيه الدين", `
+        <div class="card" style="box-shadow:none">
+          <h3 style="font-size:20px;font-weight:900;margin:0 0 10px">${escapeHtml(customer.name)}</h3>
+
+          <div style="display:grid;gap:10px">
+            <div style="background:#f8fafc;border-radius:14px;padding:12px">
+              <b>المبلغ:</b>
+              <span class="money">${money(debt.amount)}</span>
+            </div>
+
+            <div style="background:#f8fafc;border-radius:14px;padding:12px">
+              <b>الحالة:</b>
+              ${debt.status === "paid" ? "مكتمل" : "غير مكتمل"}
+            </div>
+
+            <div style="background:#f8fafc;border-radius:14px;padding:12px">
+              <b>تاريخ السداد:</b>
+              ${escapeHtml(debt.dueDate || "-")}
+            </div>
+
+            <div style="background:#f8fafc;border-radius:14px;padding:12px">
+              <b>ملاحظة:</b>
+              ${escapeHtml(debt.note || "-")}
+            </div>
+          </div>
+
+          <button id="closeManualDebtViewBtn" class="ghost-btn" style="width:100%;margin-top:14px">
+            إغلاق
+          </button>
+        </div>
+      `);
+
+      $("closeManualDebtViewBtn").onclick = closeModal;
+    }
+
     function openEditCustomerPaymentForm(customerId, paymentId) {
       const customer = state.customers.find(c => c.id === customerId);
       if (!customer) return;
@@ -6383,7 +7626,8 @@ function buildSaleItems(source) {
       setTimeout(() => openCustomerAccount(customer.id, "payments"), 120);
       toast("تم حذف الدفعة وإعادة الحساب");
     }
-async function markLaterInvoicePaid(invoiceId) {
+
+    async function markLaterInvoicePaid(invoiceId) {
       const invoice = state.invoices.find(i => i.id === invoiceId);
       if (!invoice) return;
 
@@ -6446,7 +7690,6 @@ async function markLaterInvoicePaid(invoiceId) {
       $("markLaterPaidBtn").onclick = () => markLaterInvoicePaid(invoice.id);
       $("closeLaterStatusBtn").onclick = closeModal;
     }
-
     function getCustomerTableRows(customer, tab = "all") {
       const rows = [];
       const invoices = getCustomerInvoices(customer);
@@ -6511,9 +7754,11 @@ async function markLaterInvoicePaid(invoiceId) {
           _createdAt: d.createdAt,
           _htmlActions: d.status === "paid"
             ? `<span class="badge green">مكتملة</span>`
-            : `<span class="badge yellow clickable" data-mark-manual-debt-paid="${customer.id}|${d.id}">غير مكتملة</span>`,
+            : `<span class="badge yellow">غير مكتملة</span>`,
           _rowActions: `
+            <button class="ghost-btn" data-view-manual-debt="${customer.id}|${d.id}" style="padding:7px 9px"><i class="fa-solid fa-eye"></i></button>
             <button class="ghost-btn" data-edit-manual-debt="${customer.id}|${d.id}" style="padding:7px 9px"><i class="fa-solid fa-pen"></i></button>
+            <button class="success-btn" data-mark-manual-debt-paid="${customer.id}|${d.id}" style="padding:7px 9px"><i class="fa-solid fa-check"></i></button>
             <button class="danger-btn" data-delete-manual-debt="${customer.id}|${d.id}" style="padding:7px 9px"><i class="fa-solid fa-trash"></i></button>
           `
         });
@@ -6584,7 +7829,7 @@ async function markLaterInvoicePaid(invoiceId) {
             <i class="fa-solid fa-file-pdf"></i> PDF
           </button>
 
-          <button class="ghost-btn" data-excel-customer="${freshCustomer.id}">
+          <button class="success-btn" data-excel-customer="${freshCustomer.id}">
             <i class="fa-solid fa-file-excel"></i> Excel
           </button>
         </div>
@@ -6664,7 +7909,8 @@ async function markLaterInvoicePaid(invoiceId) {
       renderAll();
       toast("تم حذف العميل وإعادة الحسابات");
     }
-function buildInvoiceHtml(invoice) {
+
+    function buildInvoiceHtml(invoice) {
       const s = state.settings || defaultSettings;
       const acc = state.paymentAccounts.find(a => a.id === invoice.paymentAccountId);
       const logo = s.localLogo || s.logo || makeLogoDataUrl(s.shopName);
@@ -6678,6 +7924,7 @@ function buildInvoiceHtml(invoice) {
                 <h2 class="invoice-shop-title">${escapeHtml(s.shopName || "المحل الرئيسي")}</h2>
                 <div style="color:#64748b;font-size:11px">${escapeHtml(s.shopPhone || "")}</div>
                 <div style="color:#64748b;font-size:11px">فاتورة مبيعات</div>
+                ${invoice.employeeName ? `<div style="color:#64748b;font-size:11px">الموظف: ${escapeHtml(invoice.employeeName)}</div>` : ""}
               </div>
             </div>
 
@@ -6755,7 +8002,6 @@ function buildInvoiceHtml(invoice) {
         </div>
       `;
     }
-
     function openInvoiceView(invoice) {
       openModal(`فاتورة رقم #${invoice.number}`, `
         <div id="invoiceViewBox">${buildInvoiceHtml(invoice)}</div>
@@ -6771,6 +8017,10 @@ function buildInvoiceHtml(invoice) {
 
           <button id="pdfInvoiceBtn" class="danger-btn">
             <i class="fa-solid fa-file-pdf"></i> PDF
+          </button>
+
+          <button id="excelInvoiceBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
           </button>
 
           <button id="editInvoiceInsideBtn" class="primary-btn">
@@ -6792,22 +8042,137 @@ function buildInvoiceHtml(invoice) {
         $("printInvoiceBtn").onclick = () => printHtml($("invoiceViewBox").innerHTML);
         $("imageInvoiceBtn").onclick = () => downloadElementImage($("invoiceViewBox"), `invoice-${invoice.number}.png`);
         $("pdfInvoiceBtn").onclick = () => downloadElementPdf($("invoiceViewBox"), `invoice-${invoice.number}.pdf`);
+        $("excelInvoiceBtn").onclick = () => excelSingleInvoice(invoice.id);
         $("editInvoiceInsideBtn").onclick = () => openEditInvoiceForm(invoice.id);
-      }, 80);
+      }, 120);
     }
 
     function printHtml(html) {
-      const area = $("printArea");
+      const frame = document.createElement("iframe");
+      frame.style.position = "fixed";
+      frame.style.left = "0";
+      frame.style.top = "0";
+      frame.style.width = "0";
+      frame.style.height = "0";
+      frame.style.border = "0";
+      frame.style.opacity = "0";
+      frame.setAttribute("aria-hidden", "true");
 
-      area.style.display = "block";
-      area.innerHTML = html;
+      const styles = `
+        <style>
+          @page{
+            size:auto;
+            margin:8mm;
+          }
 
-      window.print();
+          *{
+            box-sizing:border-box;
+          }
 
-      setTimeout(() => {
-        area.innerHTML = "";
-        area.style.display = "none";
-      }, 400);
+          html,body{
+            margin:0;
+            padding:0;
+            direction:rtl;
+            font-family:Arial,Tahoma,sans-serif;
+            background:#fff;
+            color:#0f172a;
+            -webkit-print-color-adjust:exact!important;
+            print-color-adjust:exact!important;
+          }
+
+          table{
+            width:100%;
+            border-collapse:collapse;
+          }
+
+          th,td{
+            border:1px solid #e5e7eb;
+            padding:7px;
+            font-size:11px;
+            text-align:right;
+          }
+
+          th{
+            background:#eff6ff!important;
+          }
+
+          img{
+            max-width:100%;
+          }
+
+          .invoice-paper{
+            box-shadow:none!important;
+            border:0!important;
+            border-radius:0!important;
+            padding:0!important;
+            width:100%!important;
+          }
+
+          .invoice-header{
+            background:#eff6ff!important;
+            border-radius:14px!important;
+            padding:12px!important;
+            margin-bottom:12px!important;
+          }
+
+          .no-print{
+            display:none!important;
+          }
+        </style>
+      `;
+
+      const docHtml = `
+        <!DOCTYPE html>
+        <html lang="ar" dir="rtl">
+          <head>
+            <meta charset="UTF-8">
+            <title>طباعة</title>
+            ${styles}
+          </head>
+          <body>
+            ${html}
+          </body>
+        </html>
+      `;
+
+      document.body.appendChild(frame);
+
+      const doc = frame.contentWindow.document;
+      doc.open();
+      doc.write(docHtml);
+      doc.close();
+
+      const doPrint = () => {
+        try {
+          frame.contentWindow.focus();
+          frame.contentWindow.print();
+        } finally {
+          setTimeout(() => frame.remove(), 1200);
+        }
+      };
+
+      const imgs = Array.from(doc.images || []);
+
+      if (!imgs.length) {
+        setTimeout(doPrint, 250);
+        return;
+      }
+
+      let loaded = 0;
+      const done = () => {
+        loaded++;
+        if (loaded >= imgs.length) setTimeout(doPrint, 250);
+      };
+
+      imgs.forEach(img => {
+        if (img.complete) done();
+        else {
+          img.onload = done;
+          img.onerror = done;
+        }
+      });
+
+      setTimeout(doPrint, 1800);
     }
 
     async function downloadElementImage(element, filename) {
@@ -6857,7 +8222,8 @@ function buildInvoiceHtml(invoice) {
 
       pdf.save(filename);
     }
-function reportShell(title, bodyHtml) {
+
+    function reportShell(title, bodyHtml) {
       const s = state.settings || defaultSettings;
       const logo = s.localLogo || s.logo || makeLogoDataUrl(s.shopName);
 
@@ -6962,13 +8328,7 @@ function reportShell(title, bodyHtml) {
       const customer = state.customers.find(c => c.id === customerId);
       if (!customer) return;
 
-      if (!window.XLSX) {
-        toast("مكتبة Excel لم تعمل. تأكد من الاتصال بالإنترنت أول مرة");
-        return;
-      }
-
-      const rows = getCustomerTableRows(customer, "all");
-      const ws = XLSX.utils.json_to_sheet(rows.map(r => ({
+      const rows = getCustomerTableRows(customer, "all").map(r => ({
         النوع: r.النوع,
         التاريخ: r.التاريخ,
         المدة: r.المدة,
@@ -6977,44 +8337,286 @@ function reportShell(title, bodyHtml) {
         مدين: r.مدين,
         دائن: r.دائن,
         ملاحظات: r.ملاحظات
-      })));
+      }));
 
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, "كشف الحساب");
-      XLSX.writeFile(wb, `customer-${customer.name}-${todayKey()}.xlsx`);
+      exportExcel(`كشف-${customer.name}-${todayKey()}.xlsx`, "كشف الحساب", rows);
     }
+
+    function exportExcel(filename, sheetName, rows) {
+      if (!window.XLSX) {
+        toast("مكتبة Excel لم تعمل. تأكد من الاتصال بالإنترنت أول مرة");
+        return;
+      }
+
+      const safeRows = Array.isArray(rows) ? rows : [];
+
+      if (!safeRows.length) {
+        toast("لا توجد بيانات لتصدير Excel");
+        return;
+      }
+
+      const ws = XLSX.utils.json_to_sheet(safeRows);
+      const wb = XLSX.utils.book_new();
+
+      XLSX.utils.book_append_sheet(wb, ws, String(sheetName || "Sheet1").slice(0, 31));
+      XLSX.writeFile(wb, filename);
+    }
+
+    function excelSingleInvoice(invoiceId) {
+      const inv = state.invoices.find(i => i.id === invoiceId);
+      if (!inv) return;
+
+      const rows = (inv.items || []).map(item => ({
+        رقم_الفاتورة: inv.number,
+        التاريخ: formatDate(inv.createdAt),
+        العميل: inv.customerName || "زبون نقدي",
+        الهاتف: inv.customerPhone || "",
+        الدفع: paymentMethodLabel(inv.paymentMethod),
+        المجلد: paymentFolderName(inv),
+        الموظف: inv.employeeName || "",
+        الصنف: item.name || "",
+        الكمية: item.qtyText || item.qty || "",
+        الوحدة: item.unitLabel || "",
+        السعر: cleanNumber(item.price),
+        الإجمالي: cleanNumber(item.total)
+      }));
+
+      rows.push({
+        رقم_الفاتورة: inv.number,
+        التاريخ: "",
+        العميل: "",
+        الهاتف: "",
+        الدفع: "",
+        المجلد: "",
+        الموظف: "",
+        الصنف: "الإجمالي",
+        الكمية: "",
+        الوحدة: "",
+        السعر: "",
+        الإجمالي: cleanNumber(inv.total)
+      });
+
+      exportExcel(`invoice-${inv.number}.xlsx`, "فاتورة", rows);
+    }
+
+    function excelInventory() {
+      const rows = state.products.map(p => {
+        p = normalizeProduct(p);
+
+        return {
+          الكود: p.barcode || p.code || "",
+          المنتج: p.name || "",
+          التصنيف: p.category || "",
+          نوع_الوحدة: unitLabel(p.unitType, p.customUnit),
+          الوحدة_الأساسية: unitLabel(p.baseUnit, p.customUnit),
+          المخزون_الأساسي: cleanNumber(p.stock),
+          سعر_الجملة_الأساسي: cleanNumber(p.costPrice),
+          سعر_البيع_الأساسي: cleanNumber(p.salePrice),
+          حد_التنبيه: cleanNumber(p.lowStock)
+        };
+      });
+
+      exportExcel(`inventory-${todayKey()}.xlsx`, "المخزون", rows);
+    }
+
+    function excelDebts() {
+      rebuildCustomerBalances(false);
+
+      const rows = state.customers.map(c => ({
+        الاسم: c.name || "",
+        الهاتف: c.phone || "",
+        الرصيد: cleanNumber(c.balance),
+        عليه: Math.max(0, cleanNumber(c.balance)),
+        له: Math.max(0, -cleanNumber(c.balance)),
+        إجمالي_المبيعات: cleanNumber(c.totalSales),
+        إجمالي_الدفعات: cleanNumber(c.totalPaid),
+        عدد_الفواتير: cleanNumber(c.invoicesCount),
+        آخر_حركة: formatDate(getCustomerLastActivity(c.id))
+      }));
+
+      exportExcel(`debts-${todayKey()}.xlsx`, "الديون", rows);
+    }
+
+    function excelPurchases() {
+      const rows = state.purchases.map(p => ({
+        التاريخ: formatDate(p.createdAt),
+        المورد: p.supplier || "",
+        الصنف: p.productName || "",
+        الكمية: cleanNumber(p.qty),
+        وحدة_الإدخال: p.inputUnitLabel || "",
+        التحويل: p.conversionText || "",
+        المضاف_للمخزون: cleanNumber(p.qtyBase),
+        الجملة: cleanNumber(p.cost),
+        البيع: cleanNumber(p.salePrice),
+        الإجمالي: cleanNumber(p.total),
+        ملاحظات: p.notes || ""
+      }));
+
+      exportExcel(`purchases-${todayKey()}.xlsx`, "المشتريات", rows);
+    }
+
+    function excelSupplierPayments() {
+      const rows = state.supplierPayments.map(p => {
+        const acc = state.paymentAccounts.find(a => a.id === p.accountId);
+
+        return {
+          التاريخ: formatDate(p.createdAt),
+          التاجر: p.supplierName || "",
+          المبلغ: cleanNumber(p.amount),
+          الحساب: acc?.name || "",
+          ملاحظات: p.notes || ""
+        };
+      });
+
+      exportExcel(`supplier-payments-${todayKey()}.xlsx`, "دفعات التجار", rows);
+    }
+
+    function excelExpenses() {
+      const rows = state.expenses.map(e => ({
+        التاريخ: formatDate(e.createdAt),
+        النوع: e.type || "",
+        المبلغ: cleanNumber(e.amount),
+        ملاحظات: e.notes || ""
+      }));
+
+      exportExcel(`expenses-${todayKey()}.xlsx`, "المصروفات", rows);
+    }
+
+    function excelLowStock() {
+      const rows = state.products
+        .filter(p => cleanNumber(p.stock) <= cleanNumber(p.lowStock || state.settings?.lowStock || 5))
+        .map(p => {
+          p = normalizeProduct(p);
+
+          return {
+            الصنف: p.name || "",
+            الكود: p.barcode || p.code || "",
+            الكمية_الأساسية: cleanNumber(p.stock),
+            الوحدة_الأساسية: unitLabel(p.baseUnit, p.customUnit),
+            سعر_البيع_الأساسي: cleanNumber(p.salePrice),
+            حد_التنبيه: cleanNumber(p.lowStock)
+          };
+        });
+
+      exportExcel(`low-stock-${todayKey()}.xlsx`, "البضاعة الناقصة", rows);
+    }
+    function excelInvoices() {
+      const invoices = getFilteredInvoices();
+      const rows = [];
+
+      invoices.forEach(inv => {
+        const base = {
+          رقم_الفاتورة: inv.number,
+          التاريخ: formatDate(inv.createdAt),
+          العميل: inv.customerName || "زبون نقدي",
+          الهاتف: inv.customerPhone || "",
+          الحالة: inv.status === "paid" ? "مكتملة" : "غير مكتملة",
+          الدفع: paymentMethodLabel(inv.paymentMethod),
+          المجلد: paymentFolderName(inv),
+          الموظف: inv.employeeName || "",
+          المجموع: cleanNumber(inv.subtotal),
+          الخصم: cleanNumber(inv.discount),
+          المبلغ: cleanNumber(inv.total),
+          الربح: cleanNumber(inv.profit)
+        };
+
+        if (!inv.items || !inv.items.length) {
+          rows.push({
+            ...base,
+            الصنف: "",
+            الكمية: "",
+            الوحدة: "",
+            سعر_الصنف: "",
+            إجمالي_الصنف: ""
+          });
+        } else {
+          inv.items.forEach(item => {
+            rows.push({
+              ...base,
+              الصنف: item.name || "",
+              الكمية: item.qtyText || item.qty || "",
+              الوحدة: item.unitLabel || "",
+              سعر_الصنف: cleanNumber(item.price),
+              إجمالي_الصنف: cleanNumber(item.total)
+            });
+          });
+        }
+      });
+
+      exportExcel(`invoices-${todayKey()}.xlsx`, "الفواتير", rows);
+    }
+
+    function excelReports() {
+      const data = getFilteredReportData();
+      const rows = [];
+
+      data.invoices.forEach(inv => {
+        rows.push({
+          القسم: "فاتورة",
+          التاريخ: formatDate(inv.createdAt),
+          البيان: `فاتورة #${inv.number}`,
+          الاسم: inv.customerName || "زبون نقدي",
+          الدفع: paymentMethodLabel(inv.paymentMethod),
+          الحساب: paymentFolderName(inv),
+          مدخل: cleanNumber(inv.total),
+          خارج: 0,
+          ربح: cleanNumber(inv.profit),
+          ملاحظات: inv.employeeName ? `الموظف: ${inv.employeeName}` : ""
+        });
+      });
+
+      data.expenses.forEach(e => {
+        rows.push({
+          القسم: "مصروف",
+          التاريخ: formatDate(e.createdAt),
+          البيان: e.type || "",
+          الاسم: "",
+          الدفع: "",
+          الحساب: "",
+          مدخل: 0,
+          خارج: cleanNumber(e.amount),
+          ربح: -cleanNumber(e.amount),
+          ملاحظات: e.notes || ""
+        });
+      });
+
+      data.purchases.forEach(p => {
+        rows.push({
+          القسم: "مشتريات",
+          التاريخ: formatDate(p.createdAt),
+          البيان: p.productName || "",
+          الاسم: p.supplier || "",
+          الدفع: "",
+          الحساب: "",
+          مدخل: 0,
+          خارج: cleanNumber(p.total),
+          ربح: 0,
+          ملاحظات: p.notes || ""
+        });
+      });
+
+      data.supplierPayments.forEach(p => {
+        const acc = state.paymentAccounts.find(a => a.id === p.accountId);
+
+        rows.push({
+          القسم: "دفعة تاجر",
+          التاريخ: formatDate(p.createdAt),
+          البيان: p.supplierName || "",
+          الاسم: p.supplierName || "",
+          الدفع: "",
+          الحساب: acc?.name || "",
+          مدخل: 0,
+          خارج: cleanNumber(p.amount),
+          ربح: 0,
+          ملاحظات: p.notes || ""
+        });
+      });
+
+      exportExcel(`reports-${todayKey()}.xlsx`, "تقرير شامل", rows);
+    }
+
     function buildFullInvoicesReportHtml() {
-      const period = $("invoicePeriod")?.value || "today";
-      const custom = $("invoiceCustomDate")?.value || "";
-      const status = $("invoiceStatusFilter")?.value || "all";
-      const q = ($("invoiceSearch")?.value || "").trim().toLowerCase();
-
-      const invoices = periodFilter(state.invoices, period, "createdAt", custom)
-        .filter(inv => {
-          const itemsText = (inv.items || [])
-            .map(item => `${item.name || ""} ${item.qtyText || ""} ${item.unitLabel || ""}`)
-            .join(" ")
-            .toLowerCase();
-
-          const searchOk =
-            !q ||
-            String(inv.number).includes(q) ||
-            String(inv.customerName || "").toLowerCase().includes(q) ||
-            String(inv.customerPhone || "").includes(q) ||
-            itemsText.includes(q);
-
-          const statusOk = status === "all" || inv.paymentMethod === status || inv.status === status;
-
-          const folder = state.activeInvoiceFolder || "all";
-          const folderOk =
-            folder === "all" ||
-            inv.paymentAccountId === folder ||
-            inv.paymentMethod === folder;
-
-          return searchOk && statusOk && folderOk;
-        })
-        .sort((a,b) => Number(b.createdAt || 0) - Number(a.createdAt || 0));
-
+      const invoices = getFilteredInvoices();
       const rows = [];
 
       invoices.forEach(inv => {
@@ -7029,6 +8631,7 @@ function reportShell(title, bodyHtml) {
               <td>${escapeHtml(inv.customerPhone || "-")}</td>
               <td>${escapeHtml(paymentMethodLabel(inv.paymentMethod))}</td>
               <td>${escapeHtml(acc?.name || paymentFolderName(inv))}</td>
+              <td>${escapeHtml(inv.employeeName || "-")}</td>
               <td>-</td>
               <td>-</td>
               <td>-</td>
@@ -7046,6 +8649,7 @@ function reportShell(title, bodyHtml) {
                 <td>${escapeHtml(inv.customerPhone || "-")}</td>
                 <td>${escapeHtml(paymentMethodLabel(inv.paymentMethod))}</td>
                 <td>${escapeHtml(acc?.name || paymentFolderName(inv))}</td>
+                <td>${escapeHtml(inv.employeeName || "-")}</td>
                 <td>${escapeHtml(item.name || "-")}</td>
                 <td>${escapeHtml(item.qtyText || item.qty || "1")}</td>
                 <td>${escapeHtml(item.unitLabel || "-")}</td>
@@ -7067,6 +8671,7 @@ function reportShell(title, bodyHtml) {
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الهاتف</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الدفع</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">المجلد</th>
+              <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الموظف</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الصنف</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الكمية</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الوحدة</th>
@@ -7075,20 +8680,24 @@ function reportShell(title, bodyHtml) {
             </tr>
           </thead>
           <tbody>
-            ${rows.join("") || `<tr><td colspan="11" style="text-align:center;padding:15px">لا توجد بيانات</td></tr>`}
+            ${rows.join("") || `<tr><td colspan="12" style="text-align:center;padding:15px">لا توجد بيانات</td></tr>`}
           </tbody>
         </table>
       `);
     }
 
     function buildFullReportsHtml() {
-      const period = $("reportsPeriod")?.value || "today";
-      const custom = $("reportsCustomDate")?.value || "";
+      const data = getFilteredReportData();
+      const invoices = data.invoices;
+      const expenses = data.expenses;
+      const purchases = data.purchases;
+      const supplierPayments = data.supplierPayments;
 
-      const invoices = periodFilter(state.invoices, period, "createdAt", custom);
-      const expenses = periodFilter(state.expenses, period, "createdAt", custom);
-      const purchases = periodFilter(state.purchases, period, "createdAt", custom);
-      const supplierPayments = periodFilter(state.supplierPayments, period, "createdAt", custom);
+      const salesTotal = invoices.reduce((s, x) => s + cleanNumber(x.total), 0);
+      const profitTotal = invoices.reduce((s, x) => s + cleanNumber(x.profit), 0);
+      const expensesTotal = expenses.reduce((s, x) => s + cleanNumber(x.amount), 0);
+      const supplierPaymentsTotal = supplierPayments.reduce((s, x) => s + cleanNumber(x.amount), 0);
+      const purchasesTotal = purchases.reduce((s, x) => s + cleanNumber(x.total), 0);
 
       const invoiceRows = invoices.map(inv => `
         <tr>
@@ -7097,6 +8706,7 @@ function reportShell(title, bodyHtml) {
           <td>${escapeHtml(inv.customerName || "زبون نقدي")}</td>
           <td>${escapeHtml(paymentMethodLabel(inv.paymentMethod))}</td>
           <td>${escapeHtml(paymentFolderName(inv))}</td>
+          <td>${escapeHtml(inv.employeeName || "-")}</td>
           <td>${money(inv.total)}</td>
           <td>${money(inv.profit)}</td>
         </tr>
@@ -7138,6 +8748,15 @@ function reportShell(title, bodyHtml) {
       }).join("");
 
       return reportShell("تقرير مالي شامل", `
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px">
+          <div style="background:#eff6ff;border-radius:14px;padding:10px;font-size:12px"><b>المبيعات:</b> ${money(salesTotal)}</div>
+          <div style="background:#ecfdf5;border-radius:14px;padding:10px;font-size:12px"><b>الأرباح:</b> ${money(profitTotal)}</div>
+          <div style="background:#fef2f2;border-radius:14px;padding:10px;font-size:12px"><b>المصاريف:</b> ${money(expensesTotal)}</div>
+          <div style="background:#fffbeb;border-radius:14px;padding:10px;font-size:12px"><b>دفعات التجار:</b> ${money(supplierPaymentsTotal)}</div>
+          <div style="background:#f8fafc;border-radius:14px;padding:10px;font-size:12px"><b>المشتريات:</b> ${money(purchasesTotal)}</div>
+          <div style="background:#f8fafc;border-radius:14px;padding:10px;font-size:12px"><b>الصافي:</b> ${money(profitTotal - expensesTotal)}</div>
+        </div>
+
         <h3 style="font-size:14px;margin:10px 0">الفواتير</h3>
         <table style="width:100%;border-collapse:collapse;min-width:0">
           <thead>
@@ -7147,11 +8766,12 @@ function reportShell(title, bodyHtml) {
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">العميل</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الدفع</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">المجلد</th>
+              <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الموظف</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">المبلغ</th>
               <th style="border:1px solid #e5e7eb;background:#eff6ff;padding:7px;font-size:10px">الربح</th>
             </tr>
           </thead>
-          <tbody>${invoiceRows || `<tr><td colspan="7" style="text-align:center;padding:12px">لا توجد فواتير</td></tr>`}</tbody>
+          <tbody>${invoiceRows || `<tr><td colspan="8" style="text-align:center;padding:12px">لا توجد فواتير</td></tr>`}</tbody>
         </table>
 
         <h3 style="font-size:14px;margin:14px 0 10px">المصروفات</h3>
@@ -7254,7 +8874,7 @@ function reportShell(title, bodyHtml) {
 
       downloadElementPdf(wrap, `reports-full-${todayKey()}.pdf`).finally(() => wrap.remove());
     }
-async function saveSettings() {
+    async function saveSettings() {
       const logoUrl = $("settingLogoUrl")?.value.trim() || "";
       const file = $("settingLogoFile")?.files?.[0] || null;
 
@@ -7275,6 +8895,7 @@ async function saveSettings() {
         logo: logoUrl,
         localLogo,
         logoMode: localLogo ? "local" : (logoUrl ? "url" : "default"),
+        adminPasswordHash: state.settings?.adminPasswordHash || simpleHash(DEFAULT_ADMIN_PIN),
         updatedAt: Date.now()
       };
 
@@ -7289,7 +8910,7 @@ async function saveSettings() {
 
       applySettingsToUI();
       renderAll();
-      toast("تم حفظ الإعدادات، الشعار المحلي لا يرفع و رابط الشعار يتزامن");
+      toast("تم حفظ الإعدادات، الشعار المحلي لا يرفع ورابط الشعار يتزامن");
     }
 
     function exportBackup() {
@@ -7306,6 +8927,7 @@ async function saveSettings() {
         purchases: state.purchases,
         supplierPayments: state.supplierPayments,
         paymentAccounts: state.paymentAccounts,
+        employees: state.employees,
         settings: state.settings
       };
 
@@ -7335,11 +8957,19 @@ async function saveSettings() {
         if (Array.isArray(data.purchases)) await idbBulkPut("purchases", data.purchases);
         if (Array.isArray(data.supplierPayments)) await idbBulkPut("supplierPayments", data.supplierPayments);
         if (Array.isArray(data.paymentAccounts)) await idbBulkPut("paymentAccounts", data.paymentAccounts.map(normalizePaymentAccount));
-        if (data.settings) await idbPut("settings", { ...defaultSettings, ...data.settings, id: "main" });
+        if (Array.isArray(data.employees)) await idbBulkPut("employees", data.employees.map(normalizeEmployee));
+        if (data.settings) {
+          await idbPut("settings", {
+            ...defaultSettings,
+            ...data.settings,
+            id: "main",
+            adminPasswordHash: data.settings.adminPasswordHash || simpleHash(DEFAULT_ADMIN_PIN)
+          });
+        }
 
         await loadLocalData(true);
 
-        for (const store of ["products", "invoices", "customers", "expenses", "purchases", "supplierPayments", "paymentAccounts"]) {
+        for (const store of ["products", "invoices", "customers", "expenses", "purchases", "supplierPayments", "paymentAccounts", "employees"]) {
           for (const item of state[store]) {
             await enqueueSync({
               type: "set",
@@ -7372,6 +9002,8 @@ async function saveSettings() {
         await idbClear(store);
       }
 
+      clearAuthSession();
+
       state.products = [];
       state.invoices = [];
       state.customers = [];
@@ -7379,15 +9011,18 @@ async function saveSettings() {
       state.purchases = [];
       state.supplierPayments = [];
       state.paymentAccounts = defaultAccounts.map(normalizePaymentAccount);
+      state.employees = [];
       state.cart = [];
       state.freeLines = [{ id: uid("free"), name: "", qty: 1, cost: 0, price: 0 }];
-      state.settings = { ...defaultSettings };
+      state.settings = { ...defaultSettings, adminPasswordHash: simpleHash(DEFAULT_ADMIN_PIN) };
+      state.auth.user = null;
 
       await idbPut("settings", state.settings);
       await idbBulkPut("paymentAccounts", state.paymentAccounts);
 
       renderAll();
       await refreshPendingCount();
+      $("authLock")?.classList.remove("hide");
       toast("تم مسح بيانات هذا المشروع محليًا");
     }
 
@@ -7524,7 +9159,7 @@ async function saveSettings() {
         <div class="card" style="box-shadow:none">
           <h3 style="margin:0 0 10px;font-weight:900">ديون يدوية غير مكتملة</h3>
           ${
-            manualUnpaid.map(d => `<div class="debt-card" data-mark-manual-debt-paid="${d.customerId}|${d.id}">
+            manualUnpaid.map(d => `<div class="debt-card" data-view-manual-debt="${d.customerId}|${d.id}">
               <div>
                 <div class="debt-name">${escapeHtml(d.customerName)}</div>
                 <div class="debt-sub">${escapeHtml(d.note || "دين يدوي")} · ${formatAge(d.createdAt)}</div>
@@ -7536,7 +9171,8 @@ async function saveSettings() {
         </div>
       `, true);
     }
-function stopScanner() {
+
+    function stopScanner() {
       if (state.scanner.reader) {
         try {
           state.scanner.reader.reset();
@@ -7677,7 +9313,6 @@ function stopScanner() {
         toast("لم يتم العثور على منتج بهذا الكود");
       }
     }
-
     function openQuickAddMenu() {
       openModal("إضافة سريعة", `
         <div class="payment-choice-grid">
@@ -7755,7 +9390,139 @@ function stopScanner() {
 
       sidebar.classList.remove("open");
     }
-function bindEvents() {
+
+    function ensureAuthLockHtml() {
+      if ($("authLock")) return;
+
+      const lock = document.createElement("div");
+      lock.id = "authLock";
+      lock.className = "auth-lock";
+      lock.innerHTML = `
+        <div class="auth-card">
+          <div class="auth-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+          <h1>تسجيل الدخول</h1>
+          <p>أول دخول للمدير بكلمة المرور المؤقتة 0000، وبعدها غيّرها من الإعدادات.</p>
+
+          <div class="auth-tabs">
+            <button id="authAdminTab" class="auth-tab active" type="button">
+              <i class="fa-solid fa-user-shield"></i> مدير
+            </button>
+            <button id="authEmployeeTab" class="auth-tab" type="button">
+              <i class="fa-solid fa-user"></i> موظف
+            </button>
+          </div>
+
+          <form id="adminLoginForm" class="auth-form">
+            <label class="field-label">كلمة مرور المدير</label>
+            <input id="adminPasswordInput" type="password" class="input" placeholder="0000" autocomplete="current-password">
+            <button class="primary-btn" type="submit" style="width:100%;margin-top:12px">
+              <i class="fa-solid fa-right-to-bracket"></i> دخول المدير
+            </button>
+          </form>
+
+          <form id="employeeLoginForm" class="auth-form" style="display:none">
+            <label class="field-label">اسم الموظف</label>
+            <input id="employeeNameInput" class="input" placeholder="اسم الموظف" autocomplete="username">
+
+            <label class="field-label" style="margin-top:10px">كلمة المرور</label>
+            <input id="employeePasswordInput" type="password" class="input" placeholder="كلمة المرور" autocomplete="current-password">
+
+            <button class="gold-btn" type="submit" style="width:100%;margin-top:12px">
+              <i class="fa-solid fa-right-to-bracket"></i> دخول الموظف
+            </button>
+          </form>
+        </div>
+      `;
+
+      document.body.appendChild(lock);
+    }
+
+    function ensureAuthTopButtons() {
+      const bar = document.querySelector(".topbar > div:last-child");
+      if (!bar || $("logoutBtn")) return;
+
+      const pill = document.createElement("div");
+      pill.id = "authUserPill";
+      pill.className = "auth-user-pill";
+      pill.innerHTML = `<i class="fa-solid fa-lock"></i> غير مسجل`;
+
+      const btn = document.createElement("button");
+      btn.id = "logoutBtn";
+      btn.className = "icon-btn";
+      btn.title = "تسجيل الخروج";
+      btn.innerHTML = `<i class="fa-solid fa-arrow-right-from-bracket"></i>`;
+
+      bar.prepend(btn);
+      bar.prepend(pill);
+
+      btn.onclick = logout;
+    }
+
+    function ensureSettingsAuthBoxes() {
+      const settingsPage = $("page-settings");
+      if (!settingsPage || $("adminSecurityBox")) return;
+
+      const html = `
+        <div id="adminSecurityBox" class="card" style="margin-bottom:14px;display:none">
+          <h2 style="margin:0 0 12px;font-size:19px;font-weight:900">
+            <i class="fa-solid fa-shield-halved"></i> أمان المدير
+          </h2>
+
+          <div class="form-grid">
+            <div>
+              <label class="field-label">كلمة مرور المدير الجديدة</label>
+              <input id="settingAdminPassword" type="password" class="input" placeholder="كلمة جديدة">
+            </div>
+
+            <div>
+              <label class="field-label">تأكيد كلمة المرور</label>
+              <input id="settingAdminPassword2" type="password" class="input" placeholder="أعد كلمة المرور">
+            </div>
+          </div>
+
+          <button id="changeAdminPasswordBtn" type="button" class="primary-btn" style="margin-top:14px">
+  <i class="fa-solid fa-key"></i> تغيير كلمة مرور المدير
+</button>
+        </div>
+
+        <div id="employeesSettingsBox" class="card" style="margin-bottom:14px;display:none">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+            <h2 style="margin:0;font-size:19px;font-weight:900">
+              <i class="fa-solid fa-users-gear"></i> المدير والموظفين
+            </h2>
+
+            <button id="addEmployeeBtn" class="primary-btn">
+              <i class="fa-solid fa-user-plus"></i> إضافة موظف
+            </button>
+          </div>
+
+          <div class="muted" style="font-size:12px;margin-bottom:10px;line-height:1.8">
+            الموظف يدخل مرة واحدة فقط ويتم حفظ الجلسة. إذا غيّر المدير صلاحياته أو حذف حسابه، يخرج الموظف تلقائياً عند المزامنة.
+          </div>
+
+          <div id="employeesList"></div>
+        </div>
+      `;
+
+      const firstCard = settingsPage.querySelector(".card");
+      firstCard.insertAdjacentHTML("beforebegin", html);
+
+      $("changeAdminPasswordBtn").onclick = async (e) => {
+  e.preventDefault();
+  await changeAdminPassword();
+};
+      $("addEmployeeBtn").onclick = () => openEmployeeForm();
+    }
+
+    function bindEvents() {
+      ensureAuthLockHtml();
+      ensureAuthTopButtons();
+      ensureSettingsAuthBoxes();
+      bindAuthLoginEvents();
+
       document.addEventListener("click", async (e) => {
         closeSidebarIfOutside(e);
 
@@ -7888,6 +9655,13 @@ function bindEvents() {
           return;
         }
 
+        const viewManualDebt = e.target.closest("[data-view-manual-debt]");
+        if (viewManualDebt) {
+          const [customerId, debtId] = viewManualDebt.dataset.viewManualDebt.split("|");
+          openManualDebtViewOnly(customerId, debtId);
+          return;
+        }
+
         const editManualDebtBtn = e.target.closest("[data-edit-manual-debt]");
         if (editManualDebtBtn) {
           const [customerId, debtId] = editManualDebtBtn.dataset.editManualDebt.split("|");
@@ -8014,6 +9788,18 @@ function bindEvents() {
           return;
         }
 
+        const editEmployeeBtn = e.target.closest("[data-edit-employee]");
+        if (editEmployeeBtn) {
+          openEmployeeForm(editEmployeeBtn.dataset.editEmployee);
+          return;
+        }
+
+        const deleteEmployeeBtn = e.target.closest("[data-delete-employee]");
+        if (deleteEmployeeBtn) {
+          await deleteEmployee(deleteEmployeeBtn.dataset.deleteEmployee);
+          return;
+        }
+
         const quickAction = e.target.closest("[data-quick-action]");
         if (quickAction) {
           handleQuickAction(quickAction.dataset.quickAction);
@@ -8029,7 +9815,6 @@ function bindEvents() {
           return;
         }
       });
-
       document.addEventListener("input", (e) => {
         const cartQty = e.target.closest("[data-change-cart-qty]");
         if (cartQty) {
@@ -8155,6 +9940,8 @@ function bindEvents() {
 
       $("saveSettingsBtn").onclick = saveSettings;
 
+      if ($("saveAdminPasswordBtn")) $("saveAdminPasswordBtn").onclick = changeAdminPassword;
+
       $("exportBackupBtn").onclick = exportBackup;
 
       $("importBackupInput").onchange = (e) => importBackup(e.target.files[0]);
@@ -8164,10 +9951,19 @@ function bindEvents() {
       $("printInvoicesBtn").onclick = printCurrentInvoices;
       $("imageInvoicesBtn").onclick = imageCurrentInvoices;
       $("pdfInvoicesBtn").onclick = pdfCurrentInvoices;
+      $("excelInvoicesBtn").onclick = excelInvoices;
 
       $("printReportsBtn").onclick = printCurrentReports;
       $("imageReportsBtn").onclick = imageCurrentReports;
       $("pdfReportsBtn").onclick = pdfCurrentReports;
+      $("excelReportsBtn").onclick = excelReports;
+
+      $("excelInventoryBtn").onclick = excelInventory;
+      $("excelDebtsBtn").onclick = excelDebts;
+      $("excelPurchasesBtn").onclick = excelPurchases;
+      $("excelSupplierPaymentsBtn").onclick = excelSupplierPayments;
+      $("excelExpensesBtn").onclick = excelExpenses;
+      $("excelLowStockBtn").onclick = excelLowStock;
 
       window.addEventListener("online", async () => {
         await refreshPendingCount();
@@ -8211,8 +10007,86 @@ function bindEvents() {
       });
     }
 
+    function ensureExcelButtons() {
+      if (!$("excelInvoicesBtn") && $("pdfInvoicesBtn")) {
+        $("pdfInvoicesBtn").insertAdjacentHTML("afterend", `
+          <button id="excelInvoicesBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      if (!$("excelReportsBtn") && $("pdfReportsBtn")) {
+        $("pdfReportsBtn").insertAdjacentHTML("afterend", `
+          <button id="excelReportsBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      const invHead = $("page-inventory")?.querySelector("div[style*='justify-content:space-between']");
+      if (invHead && !$("excelInventoryBtn")) {
+        invHead.insertAdjacentHTML("beforeend", `
+          <button id="excelInventoryBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      const debtsHead = $("page-debts")?.querySelector("div[style*='justify-content:space-between']");
+      if (debtsHead && !$("excelDebtsBtn")) {
+        debtsHead.insertAdjacentHTML("beforeend", `
+          <button id="excelDebtsBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      const purchasesHead = $("page-purchases")?.querySelector("div[style*='justify-content:space-between']");
+      if (purchasesHead && !$("excelPurchasesBtn")) {
+        purchasesHead.insertAdjacentHTML("beforeend", `
+          <button id="excelPurchasesBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      const supplierHead = $("page-supplierPayments")?.querySelector("div[style*='justify-content:space-between']");
+      if (supplierHead && !$("excelSupplierPaymentsBtn")) {
+        supplierHead.insertAdjacentHTML("beforeend", `
+          <button id="excelSupplierPaymentsBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      const expensesHead = $("page-expenses")?.querySelector("div[style*='justify-content:space-between']");
+      if (expensesHead && !$("excelExpensesBtn")) {
+        expensesHead.insertAdjacentHTML("beforeend", `
+          <button id="excelExpensesBtn" class="success-btn">
+            <i class="fa-solid fa-file-excel"></i> Excel
+          </button>
+        `);
+      }
+
+      const lowStockTitle = $("lowStockTable")?.closest(".card")?.querySelector("h2");
+      if (lowStockTitle && !$("excelLowStockBtn")) {
+        lowStockTitle.insertAdjacentHTML("afterend", `
+          <button id="excelLowStockBtn" class="success-btn" style="margin-bottom:10px">
+            <i class="fa-solid fa-file-excel"></i> Excel البضاعة الناقصة
+          </button>
+        `);
+      }
+    }
+
     async function boot() {
       await openDB();
+
+      ensureAuthLockHtml();
+      ensureAuthTopButtons();
+      ensureSettingsAuthBoxes();
+      ensureExcelButtons();
+
       bindEvents();
 
       updateSyncUi({
@@ -8225,9 +10099,15 @@ function bindEvents() {
 
       await loadLocalData(true);
 
+      if (navigator.onLine) {
+        await fetchFreshSettingsFromFirebase();
+      }
+
       if (!state.freeLines.length) {
         state.freeLines = [{ id: uid("free"), name: "", qty: 1, cost: 0, price: 0 }];
       }
+
+      await tryRestoreAuthSession();
 
       renderAll();
 
@@ -8251,6 +10131,9 @@ function bindEvents() {
         });
 
         await loadFirebaseOnce();
+
+        await loadLocalData(true);
+        await validateCurrentEmployeeSession();
 
         updateSyncUi({
           spin: true,
@@ -8288,6 +10171,7 @@ function bindEvents() {
 
         if (navigator.onLine) {
           await syncNow(false);
+          await validateCurrentEmployeeSession();
         }
       }, 12000);
     }
@@ -8302,6 +10186,37 @@ function bindEvents() {
       });
     }
 
+    Object.assign(window, {
+      state,
+      db,
+      ref,
+      set,
+      get,
+      remove,
+      onValue,
+      off,
+      FIREBASE_ROOT,
+      firebasePath,
+      cleanNumber,
+      money,
+      toast,
+      renderAll,
+      loadLocalData,
+      refreshPendingCount,
+      updateSyncUi,
+      idbPut,
+      idbGetAll,
+      idbDelete,
+      idbClear,
+      saveLocal,
+      removeLocal,
+      enqueueSync,
+      syncNow,
+      startRealtimeListeners,
+      rebuildCustomerBalances,
+      logout
+    });
+
     boot().catch((e) => {
       console.error(e);
       toast("حدث خطأ أثناء تشغيل التطبيق");
@@ -8314,5 +10229,66 @@ function bindEvents() {
       });
     });
   </script>
+  
+
+<script>
+/* direct-auth-final-fix-v4: login messages, recovery email, sidebar z-index */
+(function(){
+  "use strict";
+  const DEFAULT_ADMIN_PIN="0000";
+  const ADMIN_PERMISSION="__admin__";
+  const ADMIN_ID="admin";
+  const $=(id)=>document.getElementById(id);
+  const wait=(ms)=>new Promise(r=>setTimeout(r,ms));
+  function toast(msg,ms=2800){ if(typeof window.toast==="function") return window.toast(msg,ms); const el=$("toast"); if(el){el.textContent=msg;el.classList.add("show");clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove("show"),ms);} else alert(msg); }
+  function simpleHash(str){ const text=String(str||""); let h=2166136261; for(let i=0;i<text.length;i++){h^=text.charCodeAt(i); h+=(h<<1)+(h<<4)+(h<<7)+(h<<8)+(h<<24);} return String(h>>>0); }
+  function loading(btn,on,text){ if(!btn)return; if(on){ if(!btn.dataset.oldHtml)btn.dataset.oldHtml=btn.innerHTML; btn.disabled=true; btn.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> '+(text||'جاري التنفيذ...'); } else { btn.disabled=false; if(btn.dataset.oldHtml)btn.innerHTML=btn.dataset.oldHtml; delete btn.dataset.oldHtml; } }
+  function isAdmin(){ const u=window.state?.auth?.user; return !!u&&(u.role==='admin'||(u.permissions||[]).includes(ADMIN_PERMISSION)); }
+  function authKey(){ const keys=Object.keys(localStorage); const found=keys.find(k=>k.startsWith('cashier_auth_session_')&&k.endsWith('_v1')); if(found)return found; return 'cashier_auth_session_direct_final_v1'; }
+  function clearSession(){ try{ Object.keys(localStorage).forEach(k=>{if(k.startsWith('cashier_auth_session_'))localStorage.removeItem(k)}); Object.keys(sessionStorage).forEach(k=>{if(k.startsWith('cashier_auth_session_'))sessionStorage.removeItem(k)}); }catch{} }
+  function saveSession(u){ try{localStorage.setItem(authKey(),JSON.stringify({id:u.id,name:u.name,role:u.role,permissions:u.permissions||[],loginAt:Date.now()}));}catch{} }
+  function showLock(show){ const lock=$("authLock"); if(lock){ lock.classList.toggle('hide',!show); lock.style.display=show?'flex':'none'; } }
+  function setUser(u){ if(!window.state)return; window.state.auth=window.state.auth||{}; window.state.auth.user=u||null; window.state.auth.ready=true; if(u){saveSession(u);showLock(false);}else{clearSession();showLock(true);} applyUi(); }
+  function getHash(){ return window.state?.settings?.adminPasswordHash || simpleHash(DEFAULT_ADMIN_PIN); }
+  function firebaseRoot(){ return window.FIREBASE_ROOT || window.CASHIER_FIREBASE_CONFIG?.firebaseRoot || 'cashier_units_pro_default'; }
+  async function fetchSettings(){ try{ if(!navigator.onLine||!window.db||!window.ref||!window.get) return window.state?.settings; const snap=await window.get(window.ref(window.db, firebaseRoot()+"/settings/main")); if(snap&&snap.exists&&snap.exists()){ const remote=snap.val()||{}; window.state.settings={...(window.state.settings||{}),...remote,id:'main',localLogo:window.state?.settings?.localLogo||''}; if(typeof window.idbPut==='function') await window.idbPut('settings',window.state.settings); return window.state.settings; } }catch(e){console.warn('fetch settings failed',e)} return window.state?.settings; }
+  async function saveSettings(){ if(!window.state) return; window.state.settings={...(window.state.settings||{}),id:'main',updatedAt:Date.now()}; if(typeof window.idbPut==='function') await window.idbPut('settings',window.state.settings); const safe={...window.state.settings,localLogo:'',logoMode:window.state.settings.logo?'url':'default'}; if(navigator.onLine&&window.db&&window.ref&&window.set){ await window.set(window.ref(window.db, firebaseRoot()+"/settings/main"), safe); } else if(typeof window.enqueueSync==='function'){ await window.enqueueSync({type:'set',store:'settings',itemId:'main',data:safe}); } }
+  function applyUi(){ const u=window.state?.auth?.user||null; const pill=$("authUserPill"); if(pill) pill.innerHTML=u?`<i class="fa-solid ${isAdmin()?'fa-user-shield':'fa-user'}"></i> ${escape(String(u.name||'مستخدم'))}`:`<i class="fa-solid fa-lock"></i> غير مسجل`; document.querySelectorAll('.nav-btn[data-page],.bottom-btn[data-page]').forEach(b=>{ const page=b.dataset.page; const ok=!!u&&(isAdmin()||(u.permissions||[]).includes(page)); b.classList.toggle('auth-hidden',!ok); }); const a=$("adminSecurityBox"); if(a)a.style.display=isAdmin()?'block':'none'; const e=$("employeesSettingsBox"); if(e)e.style.display=isAdmin()?'block':'none'; }
+  function escape(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+  function ensureRecoveryUi(){
+    if($("forgotAdminPasswordBtn")) return;
+    const form=$("adminLoginForm");
+    if(form){ form.insertAdjacentHTML('beforeend',`<button id="forgotAdminPasswordBtn" type="button" class="ghost-btn" style="width:100%;margin-top:10px"><i class="fa-solid fa-envelope-circle-check"></i> نسيت كلمة مرور المدير</button>`); }
+    const box=$("adminSecurityBox");
+    if(box && !$("settingRecoveryEmail")){
+      const grid=box.querySelector('.form-grid')||box;
+      grid.insertAdjacentHTML('beforeend',`<div class="full-row"><label class="field-label">بريد استرداد كلمة مرور المدير</label><input id="settingRecoveryEmail" type="email" class="input" placeholder="example@email.com"></div>`);
+      if(window.state?.settings?.recoveryEmail) $("settingRecoveryEmail").value=window.state.settings.recoveryEmail;
+    }
+  }
+  function openForceChange(){ if(!isAdmin()||getHash()!==simpleHash(DEFAULT_ADMIN_PIN))return; const title=$("modalTitle"),body=$("modalBody"),back=$("modalBackdrop"),box=$("modalBox"); if(!title||!body||!back)return; title.textContent='تغيير كلمة مرور المدير إجباري'; if(box)box.classList.remove('large'); body.innerHTML=`<div class="card" style="box-shadow:none"><div style="background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:18px;padding:12px;margin-bottom:14px;font-weight:900;line-height:1.8">لا يمكن المتابعة بكلمة المرور الافتراضية 0000. غيّرها الآن وسيتم حفظها في Firebase.</div><form id="forceChangeForm"><div class="form-grid-compact"><div><label class="field-label">كلمة المرور الجديدة</label><input id="forcePass1" type="password" class="input" required></div><div><label class="field-label">تأكيد كلمة المرور</label><input id="forcePass2" type="password" class="input" required></div></div><button id="forceChangeBtn" class="primary-btn" type="submit" style="width:100%;margin-top:14px"><i class="fa-solid fa-floppy-disk"></i> حفظ والمتابعة</button></form></div>`; back.classList.add('show'); const close=$("modalCloseBtn"); if(close) close.style.display='none'; $("forceChangeForm").onsubmit=async ev=>{ev.preventDefault(); const b=$("forceChangeBtn"),p1=$("forcePass1").value.trim(),p2=$("forcePass2").value.trim(); if(p1.length<4)return toast('كلمة المرور يجب أن تكون 4 خانات على الأقل'); if(p1===DEFAULT_ADMIN_PIN)return toast('لا يمكن استخدام 0000 مرة أخرى'); if(p1!==p2)return toast('كلمتا المرور غير متطابقتين'); loading(b,true,'جاري الحفظ في Firebase...'); try{window.state.settings={...(window.state.settings||{}),adminPasswordHash:simpleHash(p1),id:'main',updatedAt:Date.now()}; await saveSettings(); if(close)close.style.display=''; back.classList.remove('show'); toast('تم حفظ كلمة مرور المدير بنجاح');}catch(e){console.error(e);toast('فشل حفظ كلمة المرور في Firebase');}finally{loading(b,false);}}; }
+  async function changeAdminPassword(){ if(!isAdmin())return toast('تغيير كلمة مرور المدير للمدير فقط'); const b=$("saveAdminPasswordBtn")||$("changeAdminPasswordBtn"),p1=$("settingAdminPassword")?.value.trim()||'',p2=$("settingAdminPassword2")?.value.trim()||'',email=$("settingRecoveryEmail")?.value.trim()||''; if(p1&&p1.length<4)return toast('كلمة المرور يجب أن تكون 4 خانات على الأقل'); if(p1&&p1===DEFAULT_ADMIN_PIN)return toast('لا يمكن استخدام 0000'); if(p1!==p2)return toast('كلمتا المرور غير متطابقتين'); if(!p1 && email){ window.state.settings={...(window.state.settings||{}),recoveryEmail:email,id:'main',updatedAt:Date.now()}; loading(b,true,'جاري حفظ البريد...'); try{await saveSettings();toast('تم حفظ بريد الاسترداد في Firebase');}catch(e){toast('فشل حفظ بريد الاسترداد');}finally{loading(b,false);} return; } if(!p1)return toast('أدخل كلمة مرور المدير الجديدة'); loading(b,true,'جاري الحفظ في Firebase...'); try{window.state.settings={...(window.state.settings||{}),adminPasswordHash:simpleHash(p1),recoveryEmail:email||window.state.settings?.recoveryEmail||'',id:'main',updatedAt:Date.now()}; await saveSettings(); if($("settingAdminPassword"))$("settingAdminPassword").value=''; if($("settingAdminPassword2"))$("settingAdminPassword2").value=''; toast('تم تغيير كلمة مرور المدير وحفظها في Firebase');}catch(e){console.error(e);toast('فشل حفظ كلمة المرور في Firebase');}finally{loading(b,false);} }
+  function openForgot(){ const title=$("modalTitle"),body=$("modalBody"),back=$("modalBackdrop"),box=$("modalBox"); if(!title||!body||!back)return; title.textContent='استرداد كلمة مرور المدير'; if(box)box.classList.remove('large'); body.innerHTML=`<form id="forgotAdminForm"><div class="form-grid-compact"><div class="full-row"><label class="field-label">بريد الاسترداد المحفوظ</label><input id="forgotEmail" type="email" class="input" required placeholder="اكتب البريد المحفوظ في الإعدادات"></div><div><label class="field-label">كلمة مرور جديدة</label><input id="forgotPass1" type="password" class="input" required></div><div><label class="field-label">تأكيد كلمة المرور</label><input id="forgotPass2" type="password" class="input" required></div></div><button id="forgotSaveBtn" class="primary-btn" type="submit" style="width:100%;margin-top:14px"><i class="fa-solid fa-key"></i> حفظ كلمة المرور الجديدة</button></form>`; back.classList.add('show'); $("forgotAdminForm").onsubmit=async ev=>{ev.preventDefault(); const b=$("forgotSaveBtn"),email=$("forgotEmail").value.trim().toLowerCase(),p1=$("forgotPass1").value.trim(),p2=$("forgotPass2").value.trim(); loading(b,true,'جاري التحقق...'); try{await fetchSettings(); const saved=String(window.state?.settings?.recoveryEmail||'').trim().toLowerCase(); if(!saved)return toast('لا يوجد بريد استرداد محفوظ في الإعدادات'); if(email!==saved)return toast('بريد الاسترداد غير صحيح'); if(p1.length<4)return toast('كلمة المرور يجب أن تكون 4 خانات على الأقل'); if(p1===DEFAULT_ADMIN_PIN)return toast('لا يمكن استخدام 0000'); if(p1!==p2)return toast('كلمتا المرور غير متطابقتين'); loading(b,true,'جاري الحفظ في Firebase...'); window.state.settings={...(window.state.settings||{}),adminPasswordHash:simpleHash(p1),id:'main',updatedAt:Date.now()}; await saveSettings(); back.classList.remove('show'); toast('تم استرداد كلمة المرور وحفظها في Firebase'); }catch(e){console.error(e);toast('فشل استرداد كلمة المرور');}finally{loading(b,false);}}; }
+  function bind(){ ensureRecoveryUi(); const adminForm=$("adminLoginForm"),empForm=$("employeeLoginForm"); if(adminForm){ adminForm.onsubmit=async ev=>{ev.preventDefault(); const btn=ev.submitter||adminForm.querySelector('button[type="submit"]'),pass=$("adminPasswordInput")?.value.trim()||''; loading(btn,true,'جاري فحص كلمة المرور...'); try{await fetchSettings(); if(simpleHash(pass)!==getHash()){toast('كلمة مرور المدير غير صحيحة');return;} if($("adminPasswordInput"))$("adminPasswordInput").value=''; setUser({id:ADMIN_ID,name:'المدير',role:'admin',permissions:[ADMIN_PERMISSION]}); toast('تم تسجيل دخول المدير بنجاح'); setTimeout(openForceChange,250);}catch(e){console.error(e);toast('حدث خطأ أثناء تسجيل الدخول');}finally{loading(btn,false);} }; }
+    if(empForm){ empForm.onsubmit=async ev=>{ev.preventDefault(); const btn=ev.submitter||empForm.querySelector('button[type="submit"]'),name=$("employeeNameInput")?.value.trim()||'',pass=$("employeePasswordInput")?.value.trim()||''; loading(btn,true,'جاري تسجيل الدخول...'); try{ const emp=(window.state?.employees||[]).find(x=>x.active!==false&&String(x.name||'').trim()===name&&x.passwordHash===simpleHash(pass)); if(!emp){toast('بيانات الموظف غير صحيحة أو الحساب موقوف');return;} if($("employeePasswordInput"))$("employeePasswordInput").value=''; setUser({id:emp.id,name:emp.name,role:(emp.permissions||[]).includes(ADMIN_PERMISSION)?'admin':'employee',permissions:emp.permissions||[]}); toast(`تم تسجيل دخول الموظف ${emp.name} بنجاح`);}catch(e){console.error(e);toast('حدث خطأ أثناء تسجيل دخول الموظف');}finally{loading(btn,false);} }; }
+    const forgot=$("forgotAdminPasswordBtn"); if(forgot) forgot.onclick=openForgot; const saveBtn=$("saveAdminPasswordBtn")||$("changeAdminPasswordBtn"); if(saveBtn) saveBtn.onclick=changeAdminPassword; const logoutBtn=$("logoutBtn"); if(logoutBtn)logoutBtn.onclick=()=>{setUser(null);toast('تم تسجيل الخروج')}; const topLogoutBtn=$("topLogoutBtn"); if(topLogoutBtn)topLogoutBtn.onclick=()=>{setUser(null);toast('تم تسجيل الخروج')}; document.addEventListener('click',e=>{ if(e.target.closest('#forgotAdminPasswordBtn')){e.preventDefault();e.stopImmediatePropagation();openForgot();} if(e.target.closest('#saveAdminPasswordBtn,#changeAdminPasswordBtn')){e.preventDefault();e.stopImmediatePropagation();changeAdminPassword();} },true);
+  }
+  function styleFix(){ if($("directAuthFinalStyle"))return; const s=document.createElement('style'); s.id='directAuthFinalStyle'; s.textContent='.sidebar{z-index:5000!important}.bottom-nav{z-index:60!important}.auth-lock{z-index:9999!important}.modal-backdrop{z-index:10000!important}'; document.head.appendChild(s); }
+  async function init(){ for(let i=0;i<60;i++){ if(window.state)break; await wait(100); } styleFix(); ensureRecoveryUi(); bind(); applyUi(); if(window.state?.settings?.recoveryEmail && $("settingRecoveryEmail")) $("settingRecoveryEmail").value=window.state.settings.recoveryEmail; setInterval(()=>{ensureRecoveryUi();applyUi();},3000); log('direct auth final fix ready'); }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+
+<script src="./cashier-barcode-patch.js"></script>
+  
+  
+
+  
+  
 </body>
 </html>
+<!-- final-inline-fixes-2026-04-28-marker-added -->
+<script>
+/* final-inline-fixes-2026-04-28 */
+(function(){"use strict";const A="__admin__",$=id=>document.getElementById(id);function toast(m,s=2600){if(window.toast)return window.toast(m,s);alert(m)}function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}function uid(p="emp"){return p+"_"+Date.now()+"_"+Math.random().toString(16).slice(2)}function hash(str){let h=2166136261;str=String(str||"");for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h+=(h<<1)+(h<<4)+(h<<7)+(h<<8)+(h<<24)}return String(h>>>0)}function root(){return window.FIREBASE_ROOT||window.CASHIER_FIREBASE_CONFIG?.firebaseRoot||"cashier_units_pro_default"}function admin(){const u=window.state?.auth?.user;return !!u&&(u.role==="admin"||(u.permissions||[]).includes(A))}function load(b,on,t){if(!b)return;if(on){b.dataset.oldHtml=b.dataset.oldHtml||b.innerHTML;b.disabled=true;b.innerHTML='<i class="fa-solid fa-circle-notch fa-spin"></i> '+(t||'جاري التنفيذ...')}else{b.disabled=false;if(b.dataset.oldHtml)b.innerHTML=b.dataset.oldHtml;delete b.dataset.oldHtml}}const pages=[["home","الرئيسية","fa-house"],["cashier","الكاشير","fa-cart-shopping"],["freeInvoice","فاتورة بدون مخزون","fa-file-circle-plus"],["inventory","المخزون","fa-boxes-stacked"],["invoices","الفواتير","fa-file-invoice-dollar"],["debts","الديون","fa-address-book"],["purchases","المشتريات","fa-truck-ramp-box"],["supplierPayments","دفعات التجار","fa-hand-holding-dollar"],["expenses","المصروفات","fa-money-bill-wave"],["reports","التقارير","fa-chart-line"],["settings","الإعدادات","fa-gear"]].map(([id,label,icon])=>({id,label,icon}));async function saveEmp(emp){window.state.employees=Array.isArray(window.state.employees)?window.state.employees:[];if(window.saveLocal)await window.saveLocal("employees",emp,true);else if(window.idbPut)await window.idbPut("employees",emp);if(navigator.onLine&&window.db&&window.ref&&window.set){try{await window.set(window.ref(window.db,root()+"/employees/"+emp.id),emp)}catch(e){console.warn(e)}}const i=window.state.employees.findIndex(e=>e.id===emp.id);if(i>=0)window.state.employees[i]=emp;else window.state.employees.push(emp);if(window.renderAll)window.renderAll()}async function delEmp(id){if(!admin())return toast("إدارة الموظفين للمدير فقط");const emp=(window.state?.employees||[]).find(e=>e.id===id);if(!emp)return;if(!confirm("حذف الموظف "+emp.name+"؟"))return;window.state.employees=(window.state.employees||[]).filter(e=>e.id!==id);if(window.removeLocal)await window.removeLocal("employees",id,true);else if(window.idbDelete)await window.idbDelete("employees",id);if(navigator.onLine&&window.db&&window.ref&&window.remove){try{await window.remove(window.ref(window.db,root()+"/employees/"+id))}catch(e){console.warn(e)}}if(window.renderAll)window.renderAll();toast("تم حذف الموظف")}function openEmp(id=""){if(!admin())return toast("إضافة وتعديل الموظفين للمدير فقط");const old=id?(window.state?.employees||[]).find(e=>e.id===id):null,t=$("modalTitle"),b=$("modalBody"),back=$("modalBackdrop"),box=$("modalBox");if(!t||!b||!back)return toast("نافذة النظام غير موجودة");t.textContent=old?"تعديل موظف":"إضافة موظف";if(box)box.classList.add("large");b.innerHTML=`<form id="finalEmployeeForm"><div class="form-grid-compact"><div><label class="field-label">اسم الموظف</label><input id="finalEmpName" class="input" required value="${esc(old?.name||"")}" placeholder="مثال: أحمد"></div><div><label class="field-label">كلمة المرور</label><input id="finalEmpPass" type="password" class="input" ${old?"":"required"} placeholder="${old?"اتركها فارغة إذا لا تريد تغييرها":"كلمة المرور"}"></div><div><label class="field-label">الحالة</label><select id="finalEmpActive" class="select"><option value="true" ${old?.active===false?"":"selected"}>فعال</option><option value="false" ${old?.active===false?"selected":""}>موقوف</option></select></div><div><label class="field-label">نوع الصلاحية</label><select id="finalEmpRole" class="select"><option value="employee" ${(old?.permissions||[]).includes(A)?"":"selected"}>موظف بصلاحيات محددة</option><option value="admin" ${(old?.permissions||[]).includes(A)?"selected":""}>صلاحيات مدير كاملة</option></select></div></div><div id="finalEmpPermBox" style="margin-top:14px"><label class="field-label">صلاحيات التبويبات</label><div class="employee-grid">${pages.map(p=>`<label class="perm-card"><input type="checkbox" class="final-emp-perm" value="${p.id}" ${(old?.permissions||[]).includes(p.id)?"checked":""}><span><i class="fa-solid ${p.icon}"></i> ${esc(p.label)}</span></label>`).join("")}</div></div><button id="finalEmpSaveBtn" class="primary-btn" type="submit" style="width:100%;margin-top:14px"><i class="fa-solid fa-floppy-disk"></i> حفظ الموظف</button></form>`;back.classList.add("show");const ref=()=>{$("finalEmpPermBox").style.display=$("finalEmpRole").value==="admin"?"none":"block"};$("finalEmpRole").onchange=ref;ref();$("finalEmployeeForm").onsubmit=async e=>{e.preventDefault();const btn=$("finalEmpSaveBtn"),name=$("finalEmpName").value.trim(),pass=$("finalEmpPass").value.trim(),role=$("finalEmpRole").value,active=$("finalEmpActive").value==="true";if(!name)return toast("أدخل اسم الموظف");if(!old&&!pass)return toast("أدخل كلمة مرور الموظف");const dup=(window.state.employees||[]).find(x=>x.id!==old?.id&&String(x.name||"").trim()===name);if(dup)return toast("يوجد موظف بنفس الاسم");let perms=role==="admin"?[A]:[...document.querySelectorAll(".final-emp-perm:checked")].map(x=>x.value);if(!perms.length)return toast("اختر صلاحية واحدة على الأقل");load(btn,true,"جاري حفظ الموظف...");try{await saveEmp({...(old||{}),id:old?.id||uid("emp"),name,passwordHash:pass?hash(pass):old?.passwordHash,permissions:perms,active,createdAt:old?.createdAt||Date.now(),updatedAt:Date.now()});back.classList.remove("show");if(box)box.classList.remove("large");toast(old?"تم تعديل الموظف والصلاحيات":"تم إضافة الموظف")}catch(err){console.error(err);toast("فشل حفظ الموظف")}finally{load(btn,false)}}}function recovery(){const box=$("adminSecurityBox");if(!box||$("settingRecoveryEmail"))return;const btn=$("saveAdminPasswordBtn")||box.querySelector("button");const html=`<div class="full-row" style="margin-top:10px"><label class="field-label">بريد استرداد كلمة مرور المدير</label><input id="settingRecoveryEmail" type="email" class="input" placeholder="example@gmail.com" value="${esc(window.state?.settings?.recoveryEmail||"")}"><div class="muted" style="font-size:12px;margin-top:6px">يُستخدم لإرسال طلب/رابط تغيير كلمة مرور المدير.</div></div>`;if(btn)btn.insertAdjacentHTML("beforebegin",html);else box.insertAdjacentHTML("beforeend",html)}async function saveRec(){const email=$("settingRecoveryEmail")?.value?.trim();if(!email||!window.state)return;window.state.settings={...(window.state.settings||{}),id:"main",recoveryEmail:email,updatedAt:Date.now()};if(window.idbPut)await window.idbPut("settings",window.state.settings);if(navigator.onLine&&window.db&&window.ref&&window.set){try{await window.set(window.ref(window.db,root()+"/settings/main"),{...window.state.settings,localLogo:"",logoMode:window.state.settings.logo?"url":"default"})}catch(e){console.warn(e)}}}function forgot(){const email=String(window.state?.settings?.recoveryEmail||$("settingRecoveryEmail")?.value||"").trim();if(!email)return toast("لا يوجد بريد استرداد محفوظ في الإعدادات");const subject="رابط تغيير كلمة مرور المدير - نظام الكاشير",body="السلام عليكم،\n\nأحتاج رابط تغيير كلمة مرور المدير لنظام الكاشير.\n\nملاحظة: إرسال رابط فعلي تلقائي يحتاج Firebase Auth أو EmailJS، وهذا يفتح Gmail على البريد المسجل.";window.location.href="mailto:"+encodeURIComponent(email)+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);toast("تم فتح Gmail/البريد لإرسال رابط تغيير كلمة المرور")}function forgotBtn(){const f=$("adminLoginForm");if(!f||$("forgotAdminPasswordBtn"))return;f.insertAdjacentHTML("beforeend",`<button id="forgotAdminPasswordBtn" type="button" class="ghost-btn" style="width:100%;margin-top:10px"><i class="fa-solid fa-envelope"></i> نسيت كلمة مرور المدير</button>`)}function noEmpInvoice(){const old=window.buildInvoiceHtml;if(typeof old==="function"&&!window.__finalNoEmployeeInvoice){window.__finalNoEmployeeInvoice=true;window.buildInvoiceHtml=function(inv){return old(inv).replace(/<div[^>]*>\s*الموظف:[\s\S]*?<\/div>/g,"").replace(/الموظف:\s*[^<\n]+/g,"")}}}function styles(){if($("finalFixesStyle"))return;const s=document.createElement("style");s.id="finalFixesStyle";s.textContent=`.sidebar{z-index:5000!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;touch-action:pan-y!important;padding-bottom:120px!important}.sidebar *{overscroll-behavior:contain!important}.bottom-nav{z-index:60!important}.modal-backdrop{z-index:10000!important}@media(max-width:900px){.sidebar{bottom:86px!important;height:auto!important}.sidebar.open{transform:translateX(0)!important}}.invoice-paper,.invoice-paper *{font-family:'Cairo',Arial,sans-serif!important}.invoice-logo{object-fit:cover!important}@media print{.invoice-paper,.invoice-paper *{font-family:'Cairo',Arial,sans-serif!important}.invoice-paper{font-size:10px!important}.invoice-shop-title{font-size:14px!important}.invoice-date-small,.invoice-paper div{font-size:10px!important}.invoice-logo{width:48px!important;height:48px!important;object-fit:cover!important}}`;document.head.appendChild(s)}function bind(){document.addEventListener("click",async e=>{const add=e.target.closest("#addEmployeeBtn");if(add){e.preventDefault();e.stopImmediatePropagation();openEmp();return}const edit=e.target.closest("[data-edit-employee]");if(edit){e.preventDefault();e.stopImmediatePropagation();openEmp(edit.dataset.editEmployee);return}const del=e.target.closest("[data-delete-employee]");if(del){e.preventDefault();e.stopImmediatePropagation();await delEmp(del.dataset.deleteEmployee);return}const fp=e.target.closest("#forgotAdminPasswordBtn");if(fp){e.preventDefault();e.stopImmediatePropagation();forgot();return}},true);document.addEventListener("change",e=>{if(e.target&&e.target.id==="settingRecoveryEmail")saveRec()},true);window.openEmployeeForm=openEmp;window.deleteEmployee=delEmp}function init(){styles();forgotBtn();recovery();bind();noEmpInvoice();setInterval(()=>{forgotBtn();recovery();noEmpInvoice()},1800)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();})();
+</script>
